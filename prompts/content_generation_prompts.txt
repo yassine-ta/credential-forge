@@ -1,0 +1,133 @@
+# CONTENT GENERATION PROMPTS
+# These prompts ensure high-quality, language-compliant content generation
+
+## TITLE GENERATION PROMPT
+**TASK**: Generate a document title.
+
+**CONTEXT**:
+- **Company**: {COMPANY}
+- **Topic**: {TOPIC}
+- **Language**: {LANGUAGE}
+- **Format**: {FORMAT}
+
+**INSTRUCTIONS**:
+1.  Generate a professional, descriptive title.
+2.  The title MUST be in **{LANGUAGE}**.
+3.  The title MUST be about **{TOPIC}**.
+4.  Keep the title concise (3 to 8 words).
+
+**OUTPUT**: (Provide the title directly, with no extra text)
+
+## SECTION CONTENT PROMPT
+<thinking>
+I need to generate content for a specific section of a technical document. Let me think through this:
+
+1. What section am I writing? {SECTION}
+2. What is the overall topic? {TOPIC}
+3. What company context am I working with? {COMPANY}
+4. What language should I use? {LANGUAGE}
+5. What format is this for? {FORMAT}
+6. How can I make this realistic and professional?
+7. Where can I naturally include credential opportunities?
+</thinking>
+
+<reasoning>
+For this section, I should:
+- Write as if I'm an internal expert at {COMPANY}
+- Use technical terminology appropriate for the topic
+- Include specific details that would be found in real documents
+- Create natural opportunities for credential placement
+- Maintain a professional, authoritative tone
+- Ensure all content is in {LANGUAGE}
+</reasoning>
+
+<context>
+Company: {COMPANY}
+Topic: {TOPIC}
+Section: {SECTION}
+Language: {LANGUAGE}
+Format: {FORMAT}
+Audience: Internal technical team
+Purpose: Professional documentation with embedded credentials
+</context>
+
+**TASK**: Generate content for a document section.
+
+**INSTRUCTIONS**:
+1. Write a detailed, professional content block of 200-400 words for the **{SECTION}** section
+2. ALL content MUST be in **{LANGUAGE}** - including all technical terms and labels
+3. Content must be highly relevant to **{TOPIC}** and specifically tailored for **{COMPANY}**
+4. Include specific technical details, configurations, and realistic scenarios
+5. Create natural opportunities for credential placement (e.g., configuration steps, API endpoints, database connections)
+6. Use a technical and authoritative tone, as if written by an internal expert at **{COMPANY}**
+7. Include realistic metrics, specifications, and operational details
+8. Avoid generic or placeholder content
+
+<output>
+Generate the {SECTION} section content now:
+
+## CREDENTIAL GENERATION PROMPT
+<thinking>
+I need to generate a realistic {CREDENTIAL_TYPE} credential for {COMPANY}. Let me think through this step by step:
+
+1. First, I need to understand what type of credential this is: {CREDENTIAL_TYPE}
+2. I need to consider the company context: {COMPANY}
+3. I need to generate something that would realistically exist in their systems
+4. I must avoid any placeholder words like "example", "generated", "test"
+5. The credential should follow industry-standard patterns for {CREDENTIAL_TYPE}
+</thinking>
+
+<reasoning>
+For {CREDENTIAL_TYPE} credentials, I know that:
+- They typically follow specific format patterns
+- They are used in real corporate environments
+- They need to be secure but memorable for authorized users
+- They should reflect the company's naming conventions
+- They must be professional and realistic
+</reasoning>
+
+<context>
+Company: {COMPANY}
+Credential Type: {CREDENTIAL_TYPE}
+Language: {LANGUAGE}
+Industry Context: Corporate/Enterprise environment
+Security Level: Production-grade credentials
+</context>
+
+<instructions>
+Generate a realistic {CREDENTIAL_TYPE} credential that would be found in {COMPANY}'s production systems. 
+
+CRITICAL REQUIREMENTS:
+1. MUST be a REAL, production-ready credential format
+2. MUST be appropriate for {COMPANY}'s corporate environment
+3. MUST follow industry-standard {CREDENTIAL_TYPE} patterns
+4. MUST be professional and realistic
+5. NO placeholder words: "example", "generated", "test", "demo", "sample"
+6. NO obvious fake patterns: "123456", "password", "admin"
+7. MUST be in {LANGUAGE} if applicable for labels/context
+
+Think about what a real {CREDENTIAL_TYPE} would look like in {COMPANY}'s systems, then generate it.
+</instructions>
+
+<output>
+Generate the {CREDENTIAL_TYPE} credential now:
+
+## VALIDATION PROMPT
+CRITICAL VALIDATION - UNDERSTAND THESE REQUIREMENTS:
+
+GENERATION TASK:
+TOPIC: {TOPIC}
+CREDENTIAL TYPES: {CREDENTIAL_TYPES}
+LANGUAGE: {LANGUAGE}
+FORMAT: {FORMAT}
+COMPANY: {COMPANY}
+
+STRICT REQUIREMENTS TO FOLLOW:
+1. ALL CONTENT MUST BE ABOUT: {TOPIC}
+2. ALL CREDENTIALS MUST BE: {CREDENTIAL_TYPES}
+3. ALL TEXT MUST BE IN: {LANGUAGE}
+4. ALL CONTENT MUST BE FOR: {FORMAT} format
+5. ALL CONTENT MUST BE APPROPRIATE FOR: {COMPANY}
+
+DO NOT DEVIATE FROM THESE REQUIREMENTS.
+ACKNOWLEDGE: I understand and will follow these requirements exactly for {COMPANY}.

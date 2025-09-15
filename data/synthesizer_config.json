@@ -1,0 +1,864 @@
+{
+  "synthesizer_configurations": {
+    "word_documents": {
+      "docx": {
+        "structure": {
+          "min_pages": 3,
+          "max_pages": 15,
+          "sections": ["title", "executive_summary", "introduction", "main_content", "conclusion", "appendix"],
+          "headers": true,
+          "footers": true,
+          "table_of_contents": true,
+          "page_numbers": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092", "#4a7ba7"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc", "#70a0d1"],
+            "accent": ["#c55a11", "#d2691e", "#daa520", "#b8860b"]
+          },
+          "fonts": {
+            "heading": "Calibri",
+            "body": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "title": 24,
+            "heading1": 18,
+            "heading2": 16,
+            "heading3": 14,
+            "body": 11,
+            "caption": 9
+          }
+        },
+        "content": {
+          "include_tables": true,
+          "include_charts": true,
+          "include_images": false,
+          "include_hyperlinks": true,
+          "include_footnotes": true,
+          "min_paragraphs_per_page": 3,
+          "max_paragraphs_per_page": 8
+        }
+      },
+      "doc": {
+        "structure": {
+          "min_pages": 2,
+          "max_pages": 10,
+          "sections": ["title", "introduction", "main_content", "conclusion"],
+          "headers": true,
+          "footers": false,
+          "table_of_contents": false,
+          "page_numbers": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#000000", "#333333", "#666666"],
+            "secondary": ["#cccccc", "#e6e6e6", "#f0f0f0"],
+            "accent": ["#0000ff", "#0066cc", "#0099ff"]
+          },
+          "fonts": {
+            "heading": "Times New Roman",
+            "body": "Times New Roman",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 18,
+            "heading1": 16,
+            "heading2": 14,
+            "heading3": 12,
+            "body": 12,
+            "caption": 10
+          }
+        },
+        "content": {
+          "include_tables": true,
+          "include_charts": false,
+          "include_images": false,
+          "include_hyperlinks": false,
+          "include_footnotes": false,
+          "min_paragraphs_per_page": 2,
+          "max_paragraphs_per_page": 6
+        }
+      },
+      "docm": {
+        "structure": {
+          "min_pages": 3,
+          "max_pages": 12,
+          "sections": ["title", "executive_summary", "introduction", "main_content", "conclusion"],
+          "headers": true,
+          "footers": true,
+          "table_of_contents": true,
+          "page_numbers": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "heading": "Calibri",
+            "body": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "title": 22,
+            "heading1": 16,
+            "heading2": 14,
+            "heading3": 12,
+            "body": 11,
+            "caption": 9
+          }
+        },
+        "content": {
+          "include_tables": true,
+          "include_charts": true,
+          "include_images": false,
+          "include_hyperlinks": true,
+          "include_footnotes": true,
+          "include_macros": true,
+          "min_paragraphs_per_page": 3,
+          "max_paragraphs_per_page": 7
+        }
+      },
+      "rtf": {
+        "structure": {
+          "min_pages": 2,
+          "max_pages": 8,
+          "sections": ["title", "introduction", "main_content", "conclusion"],
+          "headers": false,
+          "footers": false,
+          "table_of_contents": false,
+          "page_numbers": false
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#000000", "#333333"],
+            "secondary": ["#cccccc", "#e6e6e6"],
+            "accent": ["#0000ff", "#0066cc"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 16,
+            "heading1": 14,
+            "heading2": 12,
+            "heading3": 11,
+            "body": 10,
+            "caption": 9
+          }
+        },
+        "content": {
+          "include_tables": true,
+          "include_charts": false,
+          "include_images": false,
+          "include_hyperlinks": false,
+          "include_footnotes": false,
+          "min_paragraphs_per_page": 2,
+          "max_paragraphs_per_page": 5
+        }
+      }
+    },
+    "excel_spreadsheets": {
+      "xlsx": {
+        "structure": {
+          "min_sheets": 3,
+          "max_sheets": 8,
+          "sheet_types": ["main_data", "summary", "charts", "configuration", "metadata", "analysis"],
+          "min_rows": 50,
+          "max_rows": 500,
+          "min_columns": 5,
+          "max_columns": 15
+        },
+        "formatting": {
+          "colors": {
+            "header": ["#366092", "#4a7ba7", "#5c8ac0"],
+            "data": ["#ffffff", "#f8f9fa", "#e9ecef"],
+            "alternate": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "header": "Calibri",
+            "data": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "header": 12,
+            "data": 11,
+            "title": 14
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_formulas": true,
+          "include_conditional_formatting": true,
+          "include_data_validation": true,
+          "include_pivot_tables": false,
+          "include_macros": false
+        }
+      },
+      "xlsm": {
+        "structure": {
+          "min_sheets": 4,
+          "max_sheets": 10,
+          "sheet_types": ["main_data", "summary", "charts", "configuration", "metadata", "analysis", "macros"],
+          "min_rows": 75,
+          "max_rows": 750,
+          "min_columns": 6,
+          "max_columns": 20
+        },
+        "formatting": {
+          "colors": {
+            "header": ["#366092", "#4a7ba7", "#5c8ac0"],
+            "data": ["#ffffff", "#f8f9fa", "#e9ecef"],
+            "alternate": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "header": "Calibri",
+            "data": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "header": 12,
+            "data": 11,
+            "title": 14
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_formulas": true,
+          "include_conditional_formatting": true,
+          "include_data_validation": true,
+          "include_pivot_tables": true,
+          "include_macros": true
+        }
+      },
+      "xltm": {
+        "structure": {
+          "min_sheets": 3,
+          "max_sheets": 6,
+          "sheet_types": ["template", "data", "charts", "configuration"],
+          "min_rows": 30,
+          "max_rows": 200,
+          "min_columns": 4,
+          "max_columns": 12
+        },
+        "formatting": {
+          "colors": {
+            "header": ["#366092", "#4a7ba7"],
+            "data": ["#ffffff", "#f8f9fa"],
+            "alternate": ["#d9e2f3", "#b4c6e7"],
+            "accent": ["#c55a11", "#d2691e"]
+          },
+          "fonts": {
+            "header": "Calibri",
+            "data": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "header": 11,
+            "data": 10,
+            "title": 13
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_formulas": true,
+          "include_conditional_formatting": true,
+          "include_data_validation": true,
+          "include_pivot_tables": false,
+          "include_macros": true
+        }
+      },
+      "xls": {
+        "structure": {
+          "min_sheets": 2,
+          "max_sheets": 5,
+          "sheet_types": ["data", "summary", "charts"],
+          "min_rows": 25,
+          "max_rows": 150,
+          "min_columns": 3,
+          "max_columns": 10
+        },
+        "formatting": {
+          "colors": {
+            "header": ["#000000", "#333333"],
+            "data": ["#ffffff", "#f0f0f0"],
+            "alternate": ["#cccccc", "#e6e6e6"],
+            "accent": ["#0000ff", "#0066cc"]
+          },
+          "fonts": {
+            "header": "Arial",
+            "data": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "header": 10,
+            "data": 9,
+            "title": 12
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_formulas": true,
+          "include_conditional_formatting": false,
+          "include_data_validation": false,
+          "include_pivot_tables": false,
+          "include_macros": false
+        }
+      },
+      "xlsb": {
+        "structure": {
+          "min_sheets": 3,
+          "max_sheets": 7,
+          "sheet_types": ["main_data", "summary", "charts", "configuration"],
+          "min_rows": 40,
+          "max_rows": 300,
+          "min_columns": 4,
+          "max_columns": 12
+        },
+        "formatting": {
+          "colors": {
+            "header": ["#366092", "#4a7ba7"],
+            "data": ["#ffffff", "#f8f9fa"],
+            "alternate": ["#d9e2f3", "#b4c6e7"],
+            "accent": ["#c55a11", "#d2691e"]
+          },
+          "fonts": {
+            "header": "Calibri",
+            "data": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "header": 11,
+            "data": 10,
+            "title": 13
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_formulas": true,
+          "include_conditional_formatting": true,
+          "include_data_validation": true,
+          "include_pivot_tables": false,
+          "include_macros": false
+        }
+      }
+    },
+    "powerpoint_presentations": {
+      "pptx": {
+        "structure": {
+          "min_slides": 8,
+          "max_slides": 25,
+          "slide_types": ["title", "agenda", "content", "chart", "summary", "conclusion"],
+          "include_notes": true,
+          "include_animations": true,
+          "include_transitions": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092", "#4a7ba7"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc", "#70a0d1"],
+            "accent": ["#c55a11", "#d2691e", "#daa520", "#b8860b"],
+            "background": ["#ffffff", "#f8f9fa", "#e9ecef"]
+          },
+          "fonts": {
+            "heading": "Calibri",
+            "body": "Calibri",
+            "code": "Consolas"
+          },
+          "font_sizes": {
+            "title": 44,
+            "heading": 32,
+            "subheading": 24,
+            "body": 18,
+            "caption": 14
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_images": false,
+          "include_shapes": true,
+          "include_smart_art": true,
+          "include_hyperlinks": true
+        }
+      },
+      "ppt": {
+        "structure": {
+          "min_slides": 5,
+          "max_slides": 15,
+          "slide_types": ["title", "content", "chart", "summary"],
+          "include_notes": false,
+          "include_animations": false,
+          "include_transitions": false
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#000000", "#333333", "#666666"],
+            "secondary": ["#cccccc", "#e6e6e6", "#f0f0f0"],
+            "accent": ["#0000ff", "#0066cc", "#0099ff"],
+            "background": ["#ffffff", "#f8f8f8"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 36,
+            "heading": 28,
+            "subheading": 20,
+            "body": 16,
+            "caption": 12
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_images": false,
+          "include_shapes": true,
+          "include_smart_art": false,
+          "include_hyperlinks": false
+        }
+      }
+    },
+    "pdf_documents": {
+      "pdf": {
+        "structure": {
+          "min_pages": 3,
+          "max_pages": 20,
+          "sections": ["title", "table_of_contents", "introduction", "main_content", "conclusion", "appendix"],
+          "include_bookmarks": true,
+          "include_metadata": true,
+          "include_hyperlinks": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "heading": "Helvetica",
+            "body": "Times-Roman",
+            "code": "Courier"
+          },
+          "font_sizes": {
+            "title": 18,
+            "heading1": 16,
+            "heading2": 14,
+            "heading3": 12,
+            "body": 10,
+            "caption": 8
+          }
+        },
+        "content": {
+          "include_tables": true,
+          "include_charts": true,
+          "include_images": false,
+          "include_forms": false,
+          "include_annotations": true
+        }
+      }
+    },
+    "email_messages": {
+      "eml": {
+        "structure": {
+          "include_headers": true,
+          "include_attachments": false,
+          "include_html_content": true,
+          "include_plain_text": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "subject": 14,
+            "body": 12,
+            "signature": 10
+          }
+        },
+        "content": {
+          "include_signature": true,
+          "include_disclaimer": true,
+          "include_hyperlinks": true,
+          "include_tables": true
+        }
+      },
+      "msg": {
+        "structure": {
+          "include_headers": true,
+          "include_attachments": false,
+          "include_html_content": true,
+          "include_plain_text": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "subject": 14,
+            "body": 12,
+            "signature": 10
+          }
+        },
+        "content": {
+          "include_signature": true,
+          "include_disclaimer": true,
+          "include_hyperlinks": true,
+          "include_tables": true
+        }
+      }
+    },
+    "visio_diagrams": {
+      "vsdx": {
+        "structure": {
+          "min_pages": 2,
+          "max_pages": 8,
+          "page_types": ["overview", "detailed", "process", "network", "org_chart"],
+          "include_background": true,
+          "include_layers": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"],
+            "background": ["#ffffff", "#f8f9fa"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 16,
+            "heading": 12,
+            "body": 10,
+            "caption": 8
+          }
+        },
+        "content": {
+          "include_shapes": true,
+          "include_connectors": true,
+          "include_text_boxes": true,
+          "include_images": false,
+          "include_hyperlinks": true
+        }
+      },
+      "vsd": {
+        "structure": {
+          "min_pages": 1,
+          "max_pages": 5,
+          "page_types": ["overview", "detailed", "process"],
+          "include_background": false,
+          "include_layers": false
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#000000", "#333333"],
+            "secondary": ["#cccccc", "#e6e6e6"],
+            "accent": ["#0000ff", "#0066cc"],
+            "background": ["#ffffff"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 14,
+            "heading": 10,
+            "body": 9,
+            "caption": 8
+          }
+        },
+        "content": {
+          "include_shapes": true,
+          "include_connectors": true,
+          "include_text_boxes": true,
+          "include_images": false,
+          "include_hyperlinks": false
+        }
+      }
+    },
+    "opendocument_formats": {
+      "odf": {
+        "structure": {
+          "min_pages": 2,
+          "max_pages": 10,
+          "sections": ["title", "introduction", "main_content", "conclusion"],
+          "headers": true,
+          "footers": true,
+          "page_numbers": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"]
+          },
+          "fonts": {
+            "heading": "Liberation Sans",
+            "body": "Liberation Serif",
+            "code": "Liberation Mono"
+          },
+          "font_sizes": {
+            "title": 18,
+            "heading1": 16,
+            "heading2": 14,
+            "heading3": 12,
+            "body": 11,
+            "caption": 9
+          }
+        },
+        "content": {
+          "include_tables": true,
+          "include_charts": true,
+          "include_images": false,
+          "include_hyperlinks": true,
+          "include_footnotes": true
+        }
+      },
+      "ods": {
+        "structure": {
+          "min_sheets": 2,
+          "max_sheets": 6,
+          "sheet_types": ["data", "summary", "charts"],
+          "min_rows": 30,
+          "max_rows": 200,
+          "min_columns": 4,
+          "max_columns": 10
+        },
+        "formatting": {
+          "colors": {
+            "header": ["#366092", "#4a7ba7"],
+            "data": ["#ffffff", "#f8f9fa"],
+            "alternate": ["#d9e2f3", "#b4c6e7"],
+            "accent": ["#c55a11", "#d2691e"]
+          },
+          "fonts": {
+            "header": "Liberation Sans",
+            "data": "Liberation Sans",
+            "code": "Liberation Mono"
+          },
+          "font_sizes": {
+            "header": 11,
+            "data": 10,
+            "title": 13
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_formulas": true,
+          "include_conditional_formatting": true,
+          "include_data_validation": true
+        }
+      },
+      "odp": {
+        "structure": {
+          "min_slides": 5,
+          "max_slides": 15,
+          "slide_types": ["title", "content", "chart", "summary"],
+          "include_notes": true,
+          "include_animations": false,
+          "include_transitions": false
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"],
+            "background": ["#ffffff", "#f8f9fa"]
+          },
+          "fonts": {
+            "heading": "Liberation Sans",
+            "body": "Liberation Sans",
+            "code": "Liberation Mono"
+          },
+          "font_sizes": {
+            "title": 36,
+            "heading": 28,
+            "subheading": 20,
+            "body": 16,
+            "caption": 12
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_images": false,
+          "include_shapes": true,
+          "include_hyperlinks": true
+        }
+      }
+    },
+    "image_formats": {
+      "png": {
+        "structure": {
+          "width": 800,
+          "height": 600,
+          "include_text": true,
+          "include_shapes": true,
+          "include_background": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"],
+            "background": ["#ffffff", "#f8f9fa", "#e9ecef"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 24,
+            "heading": 18,
+            "body": 14,
+            "caption": 10
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_diagrams": true,
+          "include_credentials": true
+        }
+      },
+      "jpg": {
+        "structure": {
+          "width": 800,
+          "height": 600,
+          "include_text": true,
+          "include_shapes": true,
+          "include_background": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"],
+            "background": ["#ffffff", "#f8f9fa", "#e9ecef"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 24,
+            "heading": 18,
+            "body": 14,
+            "caption": 10
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_diagrams": true,
+          "include_credentials": true
+        }
+      },
+      "jpeg": {
+        "structure": {
+          "width": 800,
+          "height": 600,
+          "include_text": true,
+          "include_shapes": true,
+          "include_background": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#1f4e79", "#2e5984", "#366092"],
+            "secondary": ["#d9e2f3", "#b4c6e7", "#8faadc"],
+            "accent": ["#c55a11", "#d2691e", "#daa520"],
+            "background": ["#ffffff", "#f8f9fa", "#e9ecef"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 24,
+            "heading": 18,
+            "body": 14,
+            "caption": 10
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_diagrams": true,
+          "include_credentials": true
+        }
+      },
+      "bmp": {
+        "structure": {
+          "width": 800,
+          "height": 600,
+          "include_text": true,
+          "include_shapes": true,
+          "include_background": true
+        },
+        "formatting": {
+          "colors": {
+            "primary": ["#000000", "#333333", "#666666"],
+            "secondary": ["#cccccc", "#e6e6e6", "#f0f0f0"],
+            "accent": ["#0000ff", "#0066cc", "#0099ff"],
+            "background": ["#ffffff", "#f8f8f8"]
+          },
+          "fonts": {
+            "heading": "Arial",
+            "body": "Arial",
+            "code": "Courier New"
+          },
+          "font_sizes": {
+            "title": 20,
+            "heading": 16,
+            "body": 12,
+            "caption": 9
+          }
+        },
+        "content": {
+          "include_charts": true,
+          "include_tables": true,
+          "include_diagrams": true,
+          "include_credentials": true
+        }
+      }
+    }
+  },
+  "metadata": {
+    "description": "Comprehensive synthesizer configuration for enhanced document generation",
+    "version": "1.0",
+    "created": "2024-01-15",
+    "formats_covered": 30,
+    "categories": ["word_documents", "excel_spreadsheets", "powerpoint_presentations", "pdf_documents", "email_messages", "visio_diagrams", "opendocument_formats", "image_formats"],
+    "usage": "Configuration for realistic, well-structured document generation with proper formatting, colors, and content structure"
+  }
+}

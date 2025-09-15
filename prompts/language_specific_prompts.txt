@@ -1,0 +1,52 @@
+# LANGUAGE-SPECIFIC PROMPTS
+# These prompts provide language-specific instructions and examples
+
+## ENGLISH (en)
+LANGUAGE_NAME: English
+LANGUAGE_INSTRUCTION: Generate all content in English. Use professional, technical English appropriate for business documents.
+CREDENTIAL_GENERATION: Use regex patterns from database to generate realistic credentials. Do not use hardcoded examples.
+
+## FRENCH (fr)
+LANGUAGE_NAME: Français
+LANGUAGE_INSTRUCTION: Générez tout le contenu en français. Utilisez un français professionnel et technique approprié pour les documents d'entreprise.
+CREDENTIAL_GENERATION: Utilisez les modèles regex de la base de données pour générer des identifiants réalistes. N'utilisez pas d'exemples codés en dur.
+
+## SPANISH (es)
+LANGUAGE_NAME: Español
+LANGUAGE_INSTRUCTION: Genere todo el contenido en español. Use español profesional y técnico apropiado para documentos empresariales.
+CREDENTIAL_GENERATION: Use patrones regex de la base de datos para generar credenciales realistas. No use ejemplos codificados.
+
+## GERMAN (de)
+LANGUAGE_NAME: Deutsch
+LANGUAGE_INSTRUCTION: Generieren Sie alle Inhalte auf Deutsch. Verwenden Sie professionelles, technisches Deutsch, das für Geschäftsdokumente geeignet ist.
+CREDENTIAL_GENERATION: Verwenden Sie Regex-Muster aus der Datenbank, um realistische Anmeldedaten zu generieren. Verwenden Sie keine hartcodierten Beispiele.
+
+## ITALIAN (it)
+LANGUAGE_NAME: Italiano
+LANGUAGE_INSTRUCTION: Genera tutto il contenuto in italiano. Usa italiano professionale e tecnico appropriato per documenti aziendali.
+CREDENTIAL_GENERATION: Usa i pattern regex dal database per generare credenziali realistiche. Non usare esempi hardcoded.
+
+## PORTUGUESE (pt)
+LANGUAGE_NAME: Português
+LANGUAGE_INSTRUCTION: Gere todo o conteúdo em português. Use português profissional e técnico apropriado para documentos empresariais.
+CREDENTIAL_GENERATION: Use padrões regex do banco de dados para gerar credenciais realistas. Não use exemplos codificados.
+
+## DUTCH (nl)
+LANGUAGE_NAME: Nederlands
+LANGUAGE_INSTRUCTION: Genereer alle inhoud in het Nederlands. Gebruik professioneel, technisch Nederlands geschikt voor bedrijfsdocumenten.
+CREDENTIAL_GENERATION: Gebruik regex-patronen uit de database om realistische inloggegevens te genereren. Gebruik geen hardcoded voorbeelden.
+
+## TURKISH (tr)
+LANGUAGE_NAME: Türkçe
+LANGUAGE_INSTRUCTION: Tüm içeriği Türkçe olarak oluşturun. İş belgeleri için uygun profesyonel, teknik Türkçe kullanın.
+CREDENTIAL_GENERATION: Veritabanından regex kalıplarını kullanarak gerçekçi kimlik bilgileri oluşturun. Sabit kodlanmış örnekler kullanmayın.
+
+## CHINESE (zh)
+LANGUAGE_NAME: 中文
+LANGUAGE_INSTRUCTION: 用中文生成所有内容。使用适合商业文档的专业技术中文。
+CREDENTIAL_GENERATION: 使用数据库中的正则表达式模式生成真实的凭据。不要使用硬编码的示例。
+
+## JAPANESE (ja)
+LANGUAGE_NAME: 日本語
+LANGUAGE_INSTRUCTION: すべてのコンテンツを日本語で生成してください。ビジネス文書に適した専門的で技術的な日本語を使用してください。
+CREDENTIAL_GENERATION: データベースの正規表現パターンを使用して現実的な認証情報を生成してください。ハードコードされた例は使用しないでください。

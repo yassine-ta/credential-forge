@@ -1,0 +1,171 @@
+cmake_minimum_required(VERSION 3.16)
+project(credentialforge_native)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Platform-specific compiler options
+if(WIN32)
+    add_compile_options(/W4 /O2 /D_CRT_SECURE_NO_WARNINGS)
+    # Enable Windows-specific optimizations
+    add_compile_definitions(_WIN32_WINNT=0x0A00)
+else()
+    add_compile_options(-Wall -Wextra -O3 -march=native)
+endif()
+
+# Find required packages
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+find_package(Threads REQUIRED)
+
+# Fetch llama.cpp as external dependency
+include(FetchContent)
+FetchContent_Declare(
+    llama.cpp
+    GIT_REPOSITORY https://github.com/ggerganov/llama.cpp.git
+    GIT_TAG master
+)
+
+# Configure llama.cpp for CPU optimization
+set(LLAMA_CUDA OFF CACHE BOOL "Disable CUDA support")
+set(LLAMA_METAL OFF CACHE BOOL "Disable Metal support")
+set(LLAMA_VULKAN OFF CACHE BOOL "Disable Vulkan support")
+set(LLAMA_OPENCL OFF CACHE BOOL "Disable OpenCL support")
+set(LLAMA_HIPBLAS OFF CACHE BOOL "Disable HIP support")
+set(LLAMA_CLBLAST OFF CACHE BOOL "Disable CLBlast support")
+
+# Enable CPU optimizations
+set(LLAMA_NATIVE ON CACHE BOOL "Enable native CPU optimizations")
+set(LLAMA_AVX ON CACHE BOOL "Enable AVX instructions")
+set(LLAMA_AVX2 ON CACHE BOOL "Enable AVX2 instructions")
+set(LLAMA_FMA ON CACHE BOOL "Enable FMA instructions")
+set(LLAMA_F16C ON CACHE BOOL "Enable F16C instructions")
+set(LLAMA_SSE3 ON CACHE BOOL "Enable SSE3 instructions")
+set(LLAMA_SSSE3 ON CACHE BOOL "Enable SSSE3 instructions")
+set(LLAMA_SSE4_1 ON CACHE BOOL "Enable SSE4.1 instructions")
+set(LLAMA_SSE4_2 ON CACHE BOOL "Enable SSE4.2 instructions")
+set(LLAMA_POPCNT ON CACHE BOOL "Enable POPCNT instruction")
+
+# Platform-specific CPU optimizations
+if(APPLE)
+    set(LLAMA_ACCELERATE ON CACHE BOOL "Enable Accelerate framework (macOS)")
+endif()
+
+# Enable BLAS/LAPACK for better performance (if available)
+if(NOT WIN32)
+    find_package(BLAS QUIET)
+    find_package(LAPACK QUIET)
+    if(BLAS_FOUND AND LAPACK_FOUND)
+        set(LLAMA_BLAS ON CACHE BOOL "Enable BLAS support")
+        set(LLAMA_LAPACK ON CACHE BOOL "Enable LAPACK support")
+    endif()
+endif()
+
+# Make llama.cpp available
+FetchContent_MakeAvailable(llama.cpp)
+
+# Include directories
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${Python3_INCLUDE_DIRS})
+include_directories(${llama.cpp_SOURCE_DIR})
+
+# Native source files
+set(NATIVE_SOURCES
+    src/credential_utils.cpp
+    src/llama_cpp_interface.cpp
+    src/cpu_optimizer.cpp
+    src/memory_manager.cpp
+    src/parallel_executor.cpp
+)
+
+# Create shared library
+pybind11_add_module(credentialforge_native ${NATIVE_SOURCES})
+
+# Link libraries
+target_link_libraries(credentialforge_native 
+    ${Python3_LIBRARIES}
+    Threads::Threads
+    llama
+)
+
+# Set compile definitions for CPU optimization
+target_compile_definitions(credentialforge_native PRIVATE
+    GGML_USE_F16C
+    GGML_USE_FMA
+    GGML_USE_AVX
+    GGML_USE_AVX2
+    GGML_USE_SSE3
+    GGML_USE_SSSE3
+    GGML_USE_SSE4_1
+    GGML_USE_SSE4_2
+    GGML_USE_POPCNT
+)
+
+# Platform-specific definitions
+if(APPLE)
+    target_compile_definitions(credentialforge_native PRIVATE GGML_USE_ACCELERATE)
+endif()
+
+if(BLAS_FOUND AND LAPACK_FOUND)
+    target_compile_definitions(credentialforge_native PRIVATE 
+        GGML_USE_OPENBLAS
+        GGML_USE_CBLAS
+    )
+endif()
+
+# Set output directory
+set_target_properties(credentialforge_native PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/credentialforge/native
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/credentialforge/native
+)
+
+# Performance optimization flags
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(credentialforge_native PRIVATE
+        -march=native
+        -mtune=native
+        -O3
+        -flto
+        -funroll-loops
+        -ffast-math
+    )
+    target_link_options(credentialforge_native PRIVATE -flto)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    target_compile_options(credentialforge_native PRIVATE
+        /O2
+        /Ob2
+        /Oi
+        /Ot
+        /Oy
+        /GL
+    )
+    target_link_options(credentialforge_native PRIVATE /LTCG)
+endif()
+
+# Print configuration summary
+message(STATUS "=== CredentialForge Native Build Configuration ===")
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "C++ standard: ${CMAKE_CXX_STANDARD}")
+message(STATUS "Python executable: ${Python3_EXECUTABLE}")
+message(STATUS "Python version: ${Python3_VERSION}")
+message(STATUS "Python include dirs: ${Python3_INCLUDE_DIRS}")
+message(STATUS "Python libraries: ${Python3_LIBRARIES}")
+message(STATUS "CPU optimizations enabled:")
+message(STATUS "  - AVX: ${LLAMA_AVX}")
+message(STATUS "  - AVX2: ${LLAMA_AVX2}")
+message(STATUS "  - FMA: ${LLAMA_FMA}")
+message(STATUS "  - F16C: ${LLAMA_F16C}")
+message(STATUS "  - SSE3: ${LLAMA_SSE3}")
+message(STATUS "  - SSSE3: ${LLAMA_SSSE3}")
+message(STATUS "  - SSE4.1: ${LLAMA_SSE4_1}")
+message(STATUS "  - SSE4.2: ${LLAMA_SSE4_2}")
+message(STATUS "  - POPCNT: ${LLAMA_POPCNT}")
+if(APPLE)
+    message(STATUS "  - Accelerate: ${LLAMA_ACCELERATE}")
+endif()
+if(BLAS_FOUND AND LAPACK_FOUND)
+    message(STATUS "  - BLAS: ${LLAMA_BLAS}")
+    message(STATUS "  - LAPACK: ${LLAMA_LAPACK}")
+endif()
+message(STATUS "================================================")
+

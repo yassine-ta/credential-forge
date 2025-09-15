@@ -1,0 +1,1246 @@
+{
+  "company_language_mapping": {
+    "companies": {
+      "TechCorp Solutions": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "DataFlow Systems": {
+        "language": "en",
+        "country": "United States", 
+        "region": "North America"
+      },
+      "CloudScale Technologies": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "SecureNet Enterprises": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "InnovateLab Inc": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "DigitalBridge Corp": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "NextGen Systems": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "CyberShield Technologies": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "QuantumSoft Solutions": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "EliteTech Industries": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "ProActive Systems": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "FutureTech Dynamics": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      }
+    },
+    "axa_companies": {
+      "AXA France IARD": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA France Vie": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Partners": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Partners SAS": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Assistance France SA": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Société Beaujon": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Vamopar": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA DHP SAS": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Globex International": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Suduiraut": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Lor Patrimoine": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "GIE AXA": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "GIE AXA Trésorerie Europe": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "GIE AXA Université": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "CFP Management": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Venture Partners": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Climate": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA NEO": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Matignon 10": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Matignon 11": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Matignon 12": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Global Broker": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Atalante": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA IM PRIME": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA IM Architas": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Artemid": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Capza Transition": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA IM Select Belgium SA": {
+        "language": "fr",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "AXA Liabilities Managers": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Liabilities Managers Inc.": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "AXA DBIO GP S.à.r.l.": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA DBIO II GP S.à.r.l.": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA LM Fund Management SAS": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Colisée Re": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Portman Insurance SE": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Juridica": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Avanssur": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Assurcrédit": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Banque": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Coface": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Epargne Entreprise": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Banque Financement": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA France Participations": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Wealth Europe": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "UNOFI": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Unoparfi": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Unofi-Assurances": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "GIE AXA France": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Vendôme Participations 3": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Financière Thémis": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Retraite Entreprise": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Home Loan SFH": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Unofi-Patrimoine": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Unofi-Gestion d'Actifs": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA IM SELECT France": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA Holdings Belgium": {
+        "language": "nl",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "AXA Belgium": {
+        "language": "nl",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "YUZZU": {
+        "language": "nl",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "Inter Partner Assistance S.A.": {
+        "language": "nl",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "Inter Partner Assistance Services Belgium SA": {
+        "language": "nl",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "AXA IM Benelux": {
+        "language": "nl",
+        "country": "Belgium",
+        "region": "Europe"
+      },
+      "AXA Konzern AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA Krankenversicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "Roland Rechtsschutz-Versicherungs-AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "Deutsche Ärzteversicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA Versicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA Lebensversicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "Deutsche Ärzte Finanz Beratungs und Vermittlungs AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "Kölnische Verwaltungs AG für Versicherungswerte": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA easy Versicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "Roland Schutzbrief Versicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AGER Lebensversicherung AG": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA Assistance Deutschland GmbH": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "Inter Partner Assistance Services GmbH": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA Investment Managers Deutschland GmbH": {
+        "language": "de",
+        "country": "Germany",
+        "region": "Europe"
+      },
+      "AXA Assicurazioni SpA": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA Banca Monte dei Paschi di Siena S.p.A.": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA MPS Assicurazioni Danni S.p.A.": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "QUIXA Assicurazioni SpA": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA MPS Assicurazioni Vita S.p.A.": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA MPS Financial DAC": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA ITALIA Servizi ScpA": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA CARING Srl": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA Advice S.p.A.": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "Inter Partner Assistance Services S.R.L.": {
+        "language": "it",
+        "country": "Italy",
+        "region": "Europe"
+      },
+      "AXA Luxembourg SA": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA Assurances Luxembourg SA": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA Assurances Vie Luxembourg SA": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "Contere SA": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA IM Luxembourg": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA REIM Luxembourg S.A.": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "AXA Mediterranean Holding, S.A.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Exclusiv, Agencia de Seguros vinculada S.A.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Seguros Generales, S.A. de Seguros y Reaseguros": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Pensiones, S.A. Entitad Gestora de Fondos de Pensiones Unipersonal": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Aurora Vida, S.A. de Seguros y Reaseguros": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Fundación AXA": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Auxiliar de Seguros, Sociedad Agencia de Seguros, S.L.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Regional Services, S.A.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Group Operations Spain S.A.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Igualatorio Médico-Quirúrgico Colegial S.A. de Seguros": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Grupo Igualatorio Radiologia Diagnosticio SL": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Hospital Mompia S.A.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Grupo Pensa Salud, S.L.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA GACM Seguros Generales Cia de Seguros y Reaseguros": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "GACM ESPAÑA S.A.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Atlantis Vida Compañia de Seguros y Reaseguros S.A.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Agrupacio AMCI d'Assegurances i Reassegurances, S.A.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Atlantis Asesores, S.L": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Fleet and Care Innovation, S.L.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Asesoramiento en Seguros y Prevision Atlantis, S.L.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Atlantis Correduria de Seguros y Consultoria Actuarial, S.A": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Pool Gestora Sportiva, S.L.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AMCIF, S.L.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Assistencia Avançada BCN, S.L.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Agrupacio Serveis Adminis AIE": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Agrupacio Pensiones Entitad Gestora de Fondos de Pensiones, S.A.U.": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Fundacio de l'Agrupacio AMCI": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA People Protector Services, SAU": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "AXA Versicherungen AG": {
+        "language": "de",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "AXA Leben AG": {
+        "language": "de",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "AXA-ARAG Rechtsschutz AG": {
+        "language": "de",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "AXA Mobility Services AG": {
+        "language": "de",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "Interterra Parking SA": {
+        "language": "fr",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "Zürcher Freilager AG": {
+        "language": "de",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "Noimos AG": {
+        "language": "de",
+        "country": "Switzerland",
+        "region": "Europe"
+      },
+      "AXA UK PLC": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Winterthur 1 Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "SBJ Group Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Thinc Holdings Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Thinc Group Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Scotland Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Ignition New Business Solutions Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Scotland Limited Partnership": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Guardian Royal Exchange PLC": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Insurance PLC": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA PPP Healthcare Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Insurance UK PLC": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Services Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Health-On-Line Company UK Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA PPP Taking Care Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "The Permanent Health Company Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA General Insurance Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Swiftcover Insurance Services Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA ICAS Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA ICAS Occupational Health Services Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Health Services Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA PPP Administration Services Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "The Royal Exchange Assurance": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA UK Pension Trustees Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Health Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Doctor At Hand Diagnostics Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Anastasis ICC Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Methuselah IC Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "LanternOne IC Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Greenland IC Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA UK Group Pension Scheme Management Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Africa Specialty Risks Holding Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Africa Specialty Risks Corporate Member Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Global Healthcare (UK) Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Global Healthcare (Hong Kong) Limited": {
+        "language": "en",
+        "country": "Hong Kong",
+        "region": "Asia"
+      },
+      "AXA Life and Health Reinsurance Solutions Pte. Ltd": {
+        "language": "en",
+        "country": "Singapore",
+        "region": "Asia"
+      },
+      "AXA Global Healthcare (EU) Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "GoGreen Works Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Ireland Limited": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "AXA Insurance DAC": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "AXA Group Services Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Life Europe dac": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "AXA Ireland Pension Trustees Limited": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "AXA Pension Fund Ireland Limited": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "Architas Multi-Manager Europe Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Architas Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Laya Healthcare Limited": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "Laya Services Limited": {
+        "language": "en",
+        "country": "Ireland",
+        "region": "Europe"
+      },
+      "AXA Holding, A.S.": {
+        "language": "tr",
+        "country": "Turkey",
+        "region": "Europe"
+      },
+      "AXA Sigorta A.S.": {
+        "language": "tr",
+        "country": "Turkey",
+        "region": "Europe"
+      },
+      "AXA HAYAT ve Emeklilik A.S.": {
+        "language": "tr",
+        "country": "Turkey",
+        "region": "Europe"
+      },
+      "AXA China": {
+        "language": "zh",
+        "country": "China",
+        "region": "Asia"
+      },
+      "AXA Healthcare Management (Asia Regional Centre) Pte Ltd.": {
+        "language": "en",
+        "country": "Singapore",
+        "region": "Asia"
+      },
+      "Catlin Singapore Pte Ltd.": {
+        "language": "en",
+        "country": "Singapore",
+        "region": "Asia"
+      },
+      "Catlin Japan KK": {
+        "language": "ja",
+        "country": "Japan",
+        "region": "Asia"
+      },
+      "AXA Brasil Servicios de Consultoria de Negocios Ltda": {
+        "language": "pt",
+        "country": "Brazil",
+        "region": "Latin America"
+      },
+      "Voltaire Participações, S.A.": {
+        "language": "pt",
+        "country": "Brazil",
+        "region": "Latin America"
+      },
+      "AXA Seguros S.A.": {
+        "language": "pt",
+        "country": "Brazil",
+        "region": "Latin America"
+      },
+      "XL (Brazil) Holdings Ltda.": {
+        "language": "pt",
+        "country": "Brazil",
+        "region": "Latin America"
+      },
+      "AXA Colpatria Seguros S.A.": {
+        "language": "es",
+        "country": "Colombia",
+        "region": "Latin America"
+      },
+      "AXA Colpatria Capitalizadora S.A.": {
+        "language": "es",
+        "country": "Colombia",
+        "region": "Latin America"
+      },
+      "AXA Colpatria Seguros de Vida S.A.": {
+        "language": "es",
+        "country": "Colombia",
+        "region": "Latin America"
+      },
+      "AXA Colpatria Medicina": {
+        "language": "es",
+        "country": "Colombia",
+        "region": "Latin America"
+      },
+      "XL RE Latin America (Argentina SA)": {
+        "language": "es",
+        "country": "Argentina",
+        "region": "Latin America"
+      },
+      "AXA Equitable Financial Services, LLC": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "EQ AZ Life Re Company": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "AXA Distribution Holding Corporation": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "AXA Advisors, LLC": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "AXA Network, LLC": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "XL Services Canada Ltd.": {
+        "language": "en",
+        "country": "Canada",
+        "region": "North America"
+      },
+      "Catlin Canada, Inc.": {
+        "language": "en",
+        "country": "Canada",
+        "region": "North America"
+      },
+      "AXA Canada": {
+        "language": "en",
+        "country": "Canada",
+        "region": "North America"
+      },
+      "XL Services (Bermuda) Ltd.": {
+        "language": "en",
+        "country": "Bermuda",
+        "region": "North America"
+      },
+      "Axa Xl Insurance Co. UK Ltd.": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Architas Ltd.": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Bluefin Advisory Services Ltd.": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA Global Healthcare (UK) Ltd.": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Greenwich Insurance Company": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "BROOKLYN": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "Catlin Australia Pty LTD": {
+        "language": "en",
+        "country": "Australia",
+        "region": "Oceania"
+      },
+      "Dornoch Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "AXA XL Life Syndicate Limited": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Vector Reinsurance Ltd.": {
+        "language": "en",
+        "country": "Bermuda",
+        "region": "North America"
+      },
+      "XL Underwriting Managers Ltd.": {
+        "language": "en",
+        "country": "Bermuda",
+        "region": "North America"
+      },
+      "Fundamental Insurance Investments Ltd.": {
+        "language": "en",
+        "country": "Bermuda",
+        "region": "North America"
+      },
+      "XL (Western Europe) SARL": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "Catlin Luxembourg SARL": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "Inter Partner Assistance Servicios España SA": {
+        "language": "es",
+        "country": "Spain",
+        "region": "Europe"
+      },
+      "Global Asset Protection Services Co., Ltd.": {
+        "language": "en",
+        "country": "Singapore",
+        "region": "Asia"
+      },
+      "XL Global, Inc.": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "Eagleview Insurance Brokerage Services LLC": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "XLA Garrison LP": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "AXA AEDIFICANDI": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Infrastructure Finance Holding SARL": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "Commercial Real Estate Loans Holding SA": {
+        "language": "fr",
+        "country": "Luxembourg",
+        "region": "Europe"
+      },
+      "Babel FCT": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Immaucom": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Farmoric SA": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Prime OPCI": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "SCI Vendome Activite": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "Vendome Bureaux SCI": {
+        "language": "fr",
+        "country": "France",
+        "region": "Europe"
+      },
+      "AXA World Funds - Global Emerging Market Bonds": {
+        "language": "en",
+        "country": "United States",
+        "region": "North America"
+      },
+      "X.L. Property Holdings Ltd.": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      "Juridica SA": {
+        "language": "en",
+        "country": "United Kingdom",
+        "region": "Europe"
+      }
+    },
+    "language_codes": {
+      "en": "English",
+      "fr": "French", 
+      "de": "German",
+      "es": "Spanish",
+      "it": "Italian",
+      "pt": "Portuguese",
+      "nl": "Dutch",
+      "tr": "Turkish",
+      "zh": "Chinese",
+      "ja": "Japanese"
+    },
+    "regions": {
+      "North America": ["en"],
+      "Europe": ["en", "fr", "de", "es", "it", "nl", "tr"],
+      "Asia": ["en", "zh", "ja"],
+      "Latin America": ["es", "pt"],
+      "Oceania": ["en"]
+    },
+    "metadata": {
+      "description": "Company language mapping for CredentialForge agentic AI system",
+      "version": "1.0",
+      "created": "2024-01-15",
+      "total_companies": 200,
+      "languages_supported": 10,
+      "regions_covered": 5,
+      "usage": "Maps company names to their primary language for localized content generation"
+    }
+  }
+}

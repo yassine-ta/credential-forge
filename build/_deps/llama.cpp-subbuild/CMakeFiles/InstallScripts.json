@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/credential_forge/build/_deps/llama.cpp-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

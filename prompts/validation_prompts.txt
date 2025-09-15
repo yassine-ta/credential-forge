@@ -1,0 +1,112 @@
+# VALIDATION PROMPTS
+# Ensure content quality and compliance before generation
+
+## PRE-GENERATION VALIDATION
+You are about to generate content for {COMPANY}. Before proceeding, confirm your understanding:
+
+TASK SPECIFICATIONS:
+- Topic: {TOPIC}
+- Language: {LANGUAGE}
+- Format: {FORMAT}
+- Credential Types: {CREDENTIAL_TYPES}
+- Company: {COMPANY}
+
+VALIDATION QUESTIONS:
+1. Do you understand that ALL content must be in {LANGUAGE} only?
+2. Do you understand that content must be specifically about {TOPIC}?
+3. Do you understand that content must be relevant to {COMPANY}'s business?
+4. Do you understand that credentials must be naturally integrated into realistic scenarios?
+5. Do you understand that you must generate professional, technical content?
+
+RESPONSE FORMAT:
+Respond with: "VALIDATED: I understand all requirements for generating {LANGUAGE} content about {TOPIC} for {COMPANY} in {FORMAT} format with {CREDENTIAL_TYPES} credentials."
+
+## POST-GENERATION VALIDATION
+After generating content, perform this quality check:
+
+QUALITY CHECKLIST:
+1. Language Consistency: Is ALL content in {LANGUAGE}?
+2. Topic Relevance: Is content specifically about {TOPIC}?
+3. Company Context: Is content relevant to {COMPANY}?
+4. Credential Integration: Are credentials naturally embedded?
+5. Professional Quality: Is content professional and technical?
+6. No Placeholders: Are there no generic placeholders?
+7. No Raw Instructions: Are there no prompt instructions in output?
+
+If ANY item fails, regenerate the content.
+
+## CONTENT STRUCTURE VALIDATION
+Ensure the generated content follows this structure:
+
+1. Clear Context: Establishes {COMPANY} and {TOPIC} context
+2. Technical Details: Provides specific, realistic technical information
+3. Credential Integration: Naturally embeds credentials in realistic scenarios
+4. Professional Tone: Maintains enterprise-appropriate language
+5. Actionable Content: Provides useful, implementable information
+
+## ERROR PREVENTION
+Common errors to avoid:
+- Mixing languages within the same document
+- Using generic company names instead of {COMPANY}
+- Including raw prompt instructions in output
+- Generating placeholder text
+- Creating unrealistic or generic content
+- Separating credentials from their context
+- Using inappropriate tone for enterprise environment
+
+## CREDENTIAL INTEGRATION VALIDATION PROMPT
+<thinking>
+I need to review the content block and embed the provided credentials naturally. Let me analyze:
+
+1. What is the content about? I need to understand the context
+2. What credentials do I have to embed? I need to review the credentials list
+3. Where would these credentials naturally appear in this type of content?
+4. How can I integrate them without breaking the flow?
+5. What language should I use for labels and context?
+</thinking>
+
+<reasoning>
+For credential integration, I should:
+- Look for technical sections where credentials would naturally appear
+- Consider configuration sections, setup instructions, or security details
+- Ensure the integration feels natural and professional
+- Use appropriate language for the target audience
+- Maintain the document's tone and style
+</reasoning>
+
+<context>
+Company: {COMPANY}
+Language: {LANGUAGE}
+Content Type: Technical documentation
+Credentials Available: {CREDENTIALS_LIST}
+Integration Goal: Natural, professional embedding
+</context>
+
+**TASK**: Review and embed credentials into the provided text.
+
+**CONTENT TO REVIEW**:
+{CONTENT_BLOCK}
+
+**CREDENTIALS TO EMBED**:
+{CREDENTIALS_LIST}
+
+<instructions>
+1. Analyze the content block to understand its purpose and structure
+2. Identify the most natural locations where credentials would appear
+3. Integrate credentials smoothly without disrupting the flow
+4. Use appropriate {LANGUAGE} labels and terminology
+5. Maintain professional tone and technical accuracy
+6. If needed, add brief context explaining the credential's purpose
+</instructions>
+
+<output>
+Provide the final content with credentials naturally embedded:
+
+## SUCCESS CRITERIA
+Content generation is successful when:
+✓ All text is consistently in {LANGUAGE}
+✓ Content is specifically relevant to {COMPANY} and {TOPIC}
+✓ Credentials are naturally integrated into realistic scenarios
+✓ Content is professional, technical, and detailed
+✓ No placeholder text or raw instructions appear
+✓ Content is ready for immediate use in {COMPANY}'s systems

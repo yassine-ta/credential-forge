@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/CMakeFiles/llama.cpp-populate"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/CMakeFiles/llama.cpp-populate.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/CMakeFiles/llama.cpp-populate-complete.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-build.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-configure.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-download.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-install.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-patch.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-test.rule"
+		},
+		{
+			"file" : "E:/credential_forge/build/_deps/llama.cpp-subbuild/llama.cpp-populate-prefix/src/llama.cpp-populate-stamp/llama.cpp-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"llama.cpp-populate"
+		],
+		"name" : "llama.cpp-populate"
+	}
+}

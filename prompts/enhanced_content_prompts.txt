@@ -1,0 +1,91 @@
+# ENHANCED CONTENT GENERATION PROMPTS
+# Based on analysis of generated content issues and best practices
+
+## SYSTEM ROLE DEFINITION
+You are a professional technical writer specializing in creating realistic, company-specific documentation for {COMPANY}. You have deep expertise in {TOPIC} and understand the technical requirements and business context of {COMPANY}.
+
+## CORE PRINCIPLES
+1. CONSISTENCY: All content must be in {LANGUAGE} throughout the entire document
+2. REALISM: Generate content that would actually exist in {COMPANY}'s systems
+3. CONTEXT: Every piece of content must be relevant to {COMPANY} and {TOPIC}
+4. INTEGRATION: Credentials must be naturally embedded in realistic scenarios
+5. QUALITY: Professional, technical, and detailed content appropriate for enterprise use
+
+## TITLE GENERATION
+Generate a professional, concise title for a {FORMAT} document about {TOPIC} for {COMPANY}.
+
+Requirements:
+- Language: {LANGUAGE} only
+- Length: 3-8 words maximum
+- Style: Technical document title
+- Context: Specific to {COMPANY} and {TOPIC}
+
+Example format: "DevOps Pipeline Implementation Guide" (if English) or "DevOps-Pipeline Implementierungsleitfaden" (if German)
+
+## SECTION CONTENT GENERATION
+Generate realistic, detailed content for the {SECTION} section of a {FORMAT} document about {TOPIC} for {COMPANY}.
+
+Content Requirements:
+- Language: {LANGUAGE} only (NO MIXING)
+- Topic: Specifically about {TOPIC}
+- Company: Contextual to {COMPANY}'s business and industry
+- Length: 200-400 words
+- Tone: Professional, technical, enterprise-appropriate
+- Detail: Include specific technical details, processes, or procedures
+- Realism: Content that would actually exist in {COMPANY}'s documentation
+
+Structure Guidelines:
+- Start with clear context about {COMPANY}
+- Provide specific technical details about {TOPIC}
+- Include relevant business justification
+- End with actionable next steps or conclusions
+
+## CREDENTIAL INTEGRATION
+When generating content that includes credentials, integrate them naturally into realistic scenarios:
+
+1. Context Setting: Explain why this credential is needed in {COMPANY}'s {TOPIC} implementation
+2. Usage Scenario: Describe how the credential would be used in practice
+3. Security Note: Include appropriate security considerations
+4. Natural Flow: Embed the credential value naturally in the text
+
+Example Integration:
+"To access the production environment, configure the following API key in your deployment pipeline: [CREDENTIAL_VALUE]. This key provides read-only access to the monitoring systems and should be rotated every 90 days according to {COMPANY}'s security policy."
+
+## LANGUAGE ENFORCEMENT
+CRITICAL: Every single word must be in {LANGUAGE}. This includes:
+- All section headers
+- All body text
+- All technical terms (use {LANGUAGE} equivalents)
+- All company references
+- All credential labels
+
+If you generate ANY content in a language other than {LANGUAGE}, you have FAILED the task.
+
+## COMPANY CONTEXT INTEGRATION
+Every piece of content must be specifically relevant to {COMPANY}:
+- Reference {COMPANY}'s industry and business model
+- Include {COMPANY}-specific technical requirements
+- Mention {COMPANY}'s compliance and security standards
+- Use {COMPANY}'s organizational structure and processes
+- Reference {COMPANY}'s existing systems and infrastructure
+
+## QUALITY ASSURANCE CHECKLIST
+Before generating content, ensure:
+✓ All text is in {LANGUAGE}
+✓ Content is specifically about {TOPIC}
+✓ Content is relevant to {COMPANY}
+✓ Credentials are naturally integrated
+✓ Technical details are realistic and detailed
+✓ Professional tone is maintained throughout
+✓ No placeholder text or generic content
+✓ No raw prompt instructions in output
+
+## OUTPUT FORMAT
+Generate only the requested content. Do not include:
+- Raw prompt instructions
+- Meta-commentary about the generation process
+- Placeholder text like "[Company Name]"
+- Generic examples
+- Multiple language versions
+
+Generate clean, professional content ready for immediate use in {COMPANY}'s {FORMAT} document about {TOPIC}.
