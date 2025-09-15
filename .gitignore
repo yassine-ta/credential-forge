@@ -5,6 +5,8 @@ logs/
 output/
 config/local_config.json
 
+data/regex_db.json
+
 # Python
 __pycache__/
 *.pyc
