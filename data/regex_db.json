@@ -1,0 +1,564 @@
+{
+  "credentials": [
+    {
+      "type": "aws_access_key",
+      "regex": "^AKIA[0-9A-Z]{16}$",
+      "description": "AWS Access Key ID",
+      "generator": "construct_aws_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "aws_secret_key",
+      "regex": "^[A-Za-z0-9/+=]{40}$",
+      "description": "AWS Secret Access Key",
+      "generator": "random_string(40, 'A-Za-z0-9/+=')",
+      "realistic_format": true
+    },
+    {
+      "type": "aws_session_token",
+      "regex": "^[A-Za-z0-9+/=]{356,}$",
+      "description": "AWS Session Token",
+      "generator": "construct_aws_session_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "aws_cloudfront_key_pair_id",
+      "regex": "^[A-Z0-9]{14}$",
+      "description": "AWS CloudFront Key Pair ID",
+      "generator": "construct_cloudfront_key_id()",
+      "realistic_format": true
+    },
+    {
+      "type": "azure_client_id",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "description": "Azure Client ID",
+      "generator": "construct_azure_client_id()",
+      "realistic_format": true
+    },
+    {
+      "type": "azure_client_secret",
+      "regex": "^[A-Za-z0-9+/]{32}={0,2}$",
+      "description": "Azure Client Secret",
+      "generator": "random_string(32, 'A-Za-z0-9+/')",
+      "realistic_format": true
+    },
+    {
+      "type": "azure_subscription_id",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "description": "Azure Subscription ID",
+      "generator": "construct_azure_subscription_id()",
+      "realistic_format": true
+    },
+    {
+      "type": "google_api_key",
+      "regex": "^AIza[0-9A-Za-z\\-_]{35}$",
+      "description": "Google API Key",
+      "generator": "construct_google_api_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "google_oauth_token",
+      "regex": "^ya29\\.[A-Za-z0-9_-]{100,}$",
+      "description": "Google OAuth Token",
+      "generator": "construct_google_oauth_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "google_service_account_key",
+      "regex": "^[A-Za-z0-9+/]{1000,}$",
+      "description": "Google Service Account Key (JSON)",
+      "generator": "construct_google_service_account()",
+      "realistic_format": true
+    },
+    {
+      "type": "openai_api_key",
+      "regex": "^sk-[A-Za-z0-9]{48}$",
+      "description": "OpenAI API Key",
+      "generator": "construct_openai_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "anthropic_api_key",
+      "regex": "^sk-ant-[A-Za-z0-9]{48}$",
+      "description": "Anthropic API Key",
+      "generator": "construct_anthropic_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "cohere_api_key",
+      "regex": "^[A-Za-z0-9]{40}$",
+      "description": "Cohere API Key",
+      "generator": "random_string(40, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "huggingface_token",
+      "regex": "^hf_[A-Za-z0-9]{34}$",
+      "description": "Hugging Face Token",
+      "generator": "construct_huggingface_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "replicate_api_token",
+      "regex": "^r8_[A-Za-z0-9]{40}$",
+      "description": "Replicate API Token",
+      "generator": "construct_replicate_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "jwt_token",
+      "regex": "^eyJ[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+$",
+      "description": "JWT Token",
+      "generator": "construct_jwt()",
+      "realistic_format": true
+    },
+    {
+      "type": "github_token",
+      "regex": "^ghp_[A-Za-z0-9]{36}$",
+      "description": "GitHub Personal Access Token",
+      "generator": "construct_github_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "github_app_token",
+      "regex": "^ghu_[A-Za-z0-9]{36}$",
+      "description": "GitHub App Token",
+      "generator": "construct_github_app_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "gitlab_token",
+      "regex": "^glpat-[A-Za-z0-9_-]{20}$",
+      "description": "GitLab Personal Access Token",
+      "generator": "construct_gitlab_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "bitbucket_app_password",
+      "regex": "^[A-Za-z0-9+/]{24}={0,2}$",
+      "description": "Bitbucket App Password",
+      "generator": "random_string(24, 'A-Za-z0-9+/')",
+      "realistic_format": true
+    },
+    {
+      "type": "slack_bot_token",
+      "regex": "^xoxb-[0-9]{11}-[0-9]{11}-[A-Za-z0-9]{24}$",
+      "description": "Slack Bot Token",
+      "generator": "construct_slack_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "slack_user_token",
+      "regex": "^xoxp-[0-9]{11}-[0-9]{11}-[A-Za-z0-9]{24}$",
+      "description": "Slack User Token",
+      "generator": "construct_slack_user_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "discord_bot_token",
+      "regex": "^[A-Za-z0-9._-]{59}$",
+      "description": "Discord Bot Token",
+      "generator": "construct_discord_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "telegram_bot_token",
+      "regex": "^[0-9]{8,10}:[A-Za-z0-9_-]{35}$",
+      "description": "Telegram Bot Token",
+      "generator": "construct_telegram_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "stripe_secret_key",
+      "regex": "^sk_test_[A-Za-z0-9]{24}$",
+      "description": "Stripe Test Secret Key",
+      "generator": "construct_stripe_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "stripe_live_key",
+      "regex": "^sk_live_[A-Za-z0-9]{24}$",
+      "description": "Stripe Live Secret Key",
+      "generator": "construct_stripe_live_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "paypal_client_id",
+      "regex": "^[A-Za-z0-9]{80}$",
+      "description": "PayPal Client ID",
+      "generator": "random_string(80, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "paypal_client_secret",
+      "regex": "^[A-Za-z0-9]{80}$",
+      "description": "PayPal Client Secret",
+      "generator": "random_string(80, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "square_access_token",
+      "regex": "^sq0atp-[A-Za-z0-9_-]{22}$",
+      "description": "Square Access Token",
+      "generator": "construct_square_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "square_application_id",
+      "regex": "^sq0idp-[A-Za-z0-9_-]{22}$",
+      "description": "Square Application ID",
+      "generator": "construct_square_app_id()",
+      "realistic_format": true
+    },
+    {
+      "type": "twilio_account_sid",
+      "regex": "^AC[a-f0-9]{32}$",
+      "description": "Twilio Account SID",
+      "generator": "construct_twilio_sid()",
+      "realistic_format": true
+    },
+    {
+      "type": "twilio_auth_token",
+      "regex": "^[a-f0-9]{32}$",
+      "description": "Twilio Auth Token",
+      "generator": "random_string(32, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "sendgrid_api_key",
+      "regex": "^SG\\.[A-Za-z0-9_-]{22}\\.[A-Za-z0-9_-]{43}$",
+      "description": "SendGrid API Key",
+      "generator": "construct_sendgrid_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "mailgun_api_key",
+      "regex": "^key-[a-f0-9]{32}$",
+      "description": "Mailgun API Key",
+      "generator": "construct_mailgun_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "datadog_api_key",
+      "regex": "^[a-f0-9]{32}$",
+      "description": "Datadog API Key",
+      "generator": "random_string(32, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "newrelic_license_key",
+      "regex": "^[A-Za-z0-9]{40}$",
+      "description": "New Relic License Key",
+      "generator": "random_string(40, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "sentry_dsn",
+      "regex": "^https://[a-f0-9]{32}@[a-zA-Z0-9.-]+/[0-9]+$",
+      "description": "Sentry DSN",
+      "generator": "construct_sentry_dsn()",
+      "realistic_format": true
+    },
+    {
+      "type": "docker_hub_token",
+      "regex": "^dckr_pat_[A-Za-z0-9_-]{24}$",
+      "description": "Docker Hub Token",
+      "generator": "construct_docker_hub_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "npm_token",
+      "regex": "^npm_[A-Za-z0-9_-]{36}$",
+      "description": "NPM Token",
+      "generator": "construct_npm_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "pypi_token",
+      "regex": "^pypi-[A-Za-z0-9_-]{40}$",
+      "description": "PyPI Token",
+      "generator": "construct_pypi_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "vault_token",
+      "regex": "^hvs\\.[A-Za-z0-9_-]{24}$",
+      "description": "HashiCorp Vault Token",
+      "generator": "construct_vault_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "consul_token",
+      "regex": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+      "description": "Consul Token",
+      "generator": "construct_consul_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "kubernetes_service_account_token",
+      "regex": "^eyJ[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+$",
+      "description": "Kubernetes Service Account Token",
+      "generator": "construct_k8s_token()",
+      "realistic_format": true
+    },
+    {
+      "type": "prometheus_bearer_token",
+      "regex": "^[A-Za-z0-9_-]{32}$",
+      "description": "Prometheus Bearer Token",
+      "generator": "random_string(32, 'A-Za-z0-9_-')",
+      "realistic_format": true
+    },
+    {
+      "type": "grafana_api_key",
+      "regex": "^eyJrIjoi[A-Za-z0-9_-]{40,}$",
+      "description": "Grafana API Key",
+      "generator": "construct_grafana_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "zapier_webhook_url",
+      "regex": "^https://hooks\\.zapier\\.com/hooks/catch/[0-9]+/[A-Za-z0-9_-]+/$",
+      "description": "Zapier Webhook URL",
+      "generator": "construct_zapier_webhook()",
+      "realistic_format": true
+    },
+    {
+      "type": "ifttt_webhook_key",
+      "regex": "^[A-Za-z0-9_-]{24}$",
+      "description": "IFTTT Webhook Key",
+      "generator": "random_string(24, 'A-Za-z0-9_-')",
+      "realistic_format": true
+    },
+    {
+      "type": "webhook_secret",
+      "regex": "^whsec_[A-Za-z0-9_-]{32}$",
+      "description": "Webhook Secret",
+      "generator": "construct_webhook_secret()",
+      "realistic_format": true
+    },
+    {
+      "type": "ssh_private_key",
+      "regex": "^-----BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----\\n[A-Za-z0-9+/=\\n]+\\n-----END (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----$",
+      "description": "SSH Private Key",
+      "generator": "construct_ssh_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "gpg_private_key",
+      "regex": "^-----BEGIN PGP PRIVATE KEY BLOCK-----\\n[A-Za-z0-9+/=\\n]+\\n-----END PGP PRIVATE KEY BLOCK-----$",
+      "description": "GPG Private Key",
+      "generator": "construct_gpg_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "ssl_certificate",
+      "regex": "^-----BEGIN CERTIFICATE-----\\n[A-Za-z0-9+/=\\n]+\\n-----END CERTIFICATE-----$",
+      "description": "SSL Certificate",
+      "generator": "construct_ssl_cert()",
+      "realistic_format": true
+    },
+    {
+      "type": "private_key_pem",
+      "regex": "^-----BEGIN PRIVATE KEY-----\\n[A-Za-z0-9+/=\\n]+\\n-----END PRIVATE KEY-----$",
+      "description": "Private Key (PEM format)",
+      "generator": "construct_private_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "api_key",
+      "regex": "^[A-Za-z0-9]{32}$",
+      "description": "Generic API Key",
+      "generator": "random_string(32, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "password",
+      "regex": "^[A-Za-z0-9@#$%^&+=]{8,}$",
+      "description": "Password",
+      "generator": "construct_password(12)",
+      "realistic_format": true
+    },
+    {
+      "type": "db_connection",
+      "regex": "^(mysql|postgres)://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9.]+:[0-9]+/[a-zA-Z0-9]+$",
+      "description": "Database Connection String",
+      "generator": "construct_db_string()",
+      "realistic_format": true
+    },
+    {
+      "type": "mongodb_uri",
+      "regex": "^mongodb://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9.]+:[0-9]+/[a-zA-Z0-9]+$",
+      "description": "MongoDB Connection URI",
+      "generator": "construct_mongodb_uri()",
+      "realistic_format": true
+    },
+    {
+      "type": "redis_url",
+      "regex": "^redis://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9.]+:[0-9]+$",
+      "description": "Redis Connection URL",
+      "generator": "construct_redis_url()",
+      "realistic_format": true
+    },
+    {
+      "type": "postgres_url",
+      "regex": "^postgres://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9.]+:[0-9]+/[a-zA-Z0-9]+$",
+      "description": "PostgreSQL Connection URL",
+      "generator": "construct_postgres_url()",
+      "realistic_format": true
+    },
+    {
+      "type": "mysql_url",
+      "regex": "^mysql://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9.]+:[0-9]+/[a-zA-Z0-9]+$",
+      "description": "MySQL Connection URL",
+      "generator": "construct_mysql_url()",
+      "realistic_format": true
+    },
+    {
+      "type": "elasticsearch_url",
+      "regex": "^https://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9.]+:[0-9]+$",
+      "description": "Elasticsearch Connection URL",
+      "generator": "construct_elasticsearch_url()",
+      "realistic_format": true
+    },
+    {
+      "type": "twitter_api_key",
+      "regex": "^[A-Za-z0-9]{25}$",
+      "description": "Twitter API Key",
+      "generator": "random_string(25, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "twitter_api_secret",
+      "regex": "^[A-Za-z0-9]{50}$",
+      "description": "Twitter API Secret",
+      "generator": "random_string(50, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "facebook_app_id",
+      "regex": "^[0-9]{15,16}$",
+      "description": "Facebook App ID",
+      "generator": "random_string(15, '0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "facebook_app_secret",
+      "regex": "^[a-f0-9]{32}$",
+      "description": "Facebook App Secret",
+      "generator": "random_string(32, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "linkedin_client_id",
+      "regex": "^[A-Za-z0-9]{12}$",
+      "description": "LinkedIn Client ID",
+      "generator": "random_string(12, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "linkedin_client_secret",
+      "regex": "^[A-Za-z0-9]{16}$",
+      "description": "LinkedIn Client Secret",
+      "generator": "random_string(16, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "digitalocean_token",
+      "regex": "^[a-f0-9]{64}$",
+      "description": "DigitalOcean API Token",
+      "generator": "random_string(64, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "heroku_api_key",
+      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "description": "Heroku API Key",
+      "generator": "construct_heroku_api_key()",
+      "realistic_format": true
+    },
+    {
+      "type": "jenkins_api_token",
+      "regex": "^[A-Za-z0-9]{32}$",
+      "description": "Jenkins API Token",
+      "generator": "random_string(32, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "travis_ci_token",
+      "regex": "^[A-Za-z0-9]{22}$",
+      "description": "Travis CI Token",
+      "generator": "random_string(22, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "circleci_token",
+      "regex": "^[a-f0-9]{40}$",
+      "description": "CircleCI Token",
+      "generator": "random_string(40, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "rubygems_api_key",
+      "regex": "^[a-f0-9]{40}$",
+      "description": "RubyGems API Key",
+      "generator": "random_string(40, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "maven_settings_password",
+      "regex": "^[A-Za-z0-9@#$%^&+=]{8,}$",
+      "description": "Maven Settings Password",
+      "generator": "construct_password(12)",
+      "realistic_format": true
+    },
+    {
+      "type": "gradle_properties_key",
+      "regex": "^[A-Za-z0-9]{32}$",
+      "description": "Gradle Properties Key",
+      "generator": "random_string(32, 'A-Za-z0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "sonarqube_token",
+      "regex": "^[a-f0-9]{40}$",
+      "description": "SonarQube Token",
+      "generator": "random_string(40, 'a-f0-9')",
+      "realistic_format": true
+    },
+    {
+      "type": "nexus_repository_token",
+      "regex": "^[A-Za-z0-9_-]{24}$",
+      "description": "Nexus Repository Token",
+      "generator": "random_string(24, 'A-Za-z0-9_-')",
+      "realistic_format": true
+    },
+    {
+      "type": "etcd_ca_cert",
+      "regex": "^-----BEGIN CERTIFICATE-----\\n[A-Za-z0-9+/=\\n]+\\n-----END CERTIFICATE-----$",
+      "description": "etcd CA Certificate",
+      "generator": "construct_certificate()",
+      "realistic_format": true
+    },
+    {
+      "type": "influxdb_token",
+      "regex": "^[A-Za-z0-9_-]{40}$",
+      "description": "InfluxDB Token",
+      "generator": "random_string(40, 'A-Za-z0-9_-')",
+      "realistic_format": true
+    },
+    {
+      "type": "kibana_api_key",
+      "regex": "^[A-Za-z0-9_-]{32}$",
+      "description": "Kibana API Key",
+      "generator": "random_string(32, 'A-Za-z0-9_-')",
+      "realistic_format": true
+    },
+    {
+      "type": "splunk_token",
+      "regex": "^[A-Za-z0-9_-]{24}$",
+      "description": "Splunk Token",
+      "generator": "random_string(24, 'A-Za-z0-9_-')",
+      "realistic_format": true
+    }
+  ]
+}
