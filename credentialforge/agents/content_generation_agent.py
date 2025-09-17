@@ -974,10 +974,16 @@ class ContentGenerationAgent:
         for i in range(num_creds):
             cred_type = random.choice(credential_types)
             if self.credential_generator:
-                credential = self.credential_generator.generate_credential(cred_type)
+                try:
+                    credential = self.credential_generator.generate_credential(cred_type)
+                    print(f"DEBUG: Ultra-fast generated {cred_type}: {credential}")
+                except Exception as e:
+                    print(f"Warning: CredentialGenerator failed in ultra-fast mode for {cred_type}: {e}")
+                    # Use more realistic fallback instead of simple pattern
+                    credential = self._generate_realistic_fallback(cred_type)
             else:
-                # Fallback to simple generation
-                credential = f"{cred_type}_{random.randint(100000, 999999)}"
+                # Generate more realistic fallback
+                credential = self._generate_realistic_fallback(cred_type)
             
             credentials.append({
                 'type': cred_type,
@@ -986,6 +992,34 @@ class ContentGenerationAgent:
             })
         
         return credentials
+
+    def _generate_realistic_fallback(self, credential_type: str) -> str:
+        """Generate realistic fallback credentials when CredentialGenerator is not available."""
+        import string
+        import random
+        
+        # Provide realistic fallbacks for common credential types
+        if credential_type == "slack_user_token":
+            return 'xoxp-' + str(random.randint(10000000000, 99999999999)) + '-' + str(random.randint(10000000000, 99999999999)) + '-' + ''.join(random.choices(string.ascii_letters + string.digits, k=24))
+        elif credential_type == "slack_bot_token":
+            return 'xoxb-' + str(random.randint(10000000000, 99999999999)) + '-' + str(random.randint(10000000000, 99999999999)) + '-' + ''.join(random.choices(string.ascii_letters + string.digits, k=24))
+        elif credential_type == "api_key":
+            return ''.join(random.choices(string.ascii_letters + string.digits, k=32))
+        elif credential_type == "aws_access_key":
+            return 'AKIA' + ''.join(random.choices(string.ascii_uppercase + string.digits, k=16))
+        elif credential_type == "jwt_token":
+            # Generate a realistic JWT-like token
+            header = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
+            payload = ''.join(random.choices(string.ascii_letters + string.digits + '-_', k=40))
+            signature = ''.join(random.choices(string.ascii_letters + string.digits + '-_', k=43))
+            return f"{header}.{payload}.{signature}"
+        elif credential_type == "password":
+            chars = string.ascii_letters + string.digits + '@#$%^&+='
+            length = random.randint(8, 16)
+            return ''.join(random.choices(chars, k=length))
+        else:
+            # Generic fallback for unknown types
+            return f"{credential_type}_{random.randint(100000, 999999)}"
 
     def _clean_generated_content(self, content: str) -> str:
         """Clean generated content to remove template instructions and placeholders."""
@@ -1059,25 +1093,11 @@ class ContentGenerationAgent:
         """Generate credentials with proper localized labels and count limits."""
         credentials = []
         
-        # Determine how many credentials to generate
-        # For reasonable numbers of credential types (<= 5), generate all of them
-        # This ensures users get what they request
-        if len(credential_types) <= 5:
-            # Generate all requested credential types
-            selected_types = credential_types
-        else:
-            # Use the original random selection logic when there are too many types
-            effective_min = min(min_creds, len(credential_types))
-            effective_max = min(max_creds, len(credential_types))
-            
-            # Ensure min <= max
-            if effective_min > effective_max:
-                effective_min = effective_max
-            
-            num_credentials = random.randint(effective_min, effective_max)
-            
-            # Randomly select which credential types to use
-            selected_types = random.sample(credential_types, num_credentials)
+        # Smart credential generation: avoid duplicating the same credential type
+        # Generate one credential per unique type selected by the user
+        selected_types = credential_types[:max_creds]  # Limit to max_creds to respect user's preference
+        
+        print(f"DEBUG: Generating {len(selected_types)} unique credentials from types: {selected_types}")
         
         for cred_type in selected_types:
             # Generate credential value (this would use the credential generator)
@@ -1148,6 +1168,12 @@ class ContentGenerationAgent:
     def _embed_credentials_into_sections(self, sections: List[Dict[str, str]], credentials: List[Dict[str, str]], language: str) -> List[Dict[str, str]]:
         """Embed credentials into section content naturally."""
         if not credentials:
+            return sections
+        
+        # Skip embedding if credentials will be handled by format synthesizer
+        # This prevents duplication when both ContentGenerationAgent and FormatSynthesizer embed credentials
+        if hasattr(self, '_skip_credential_embedding') and self._skip_credential_embedding:
+            print(f"DEBUG: Skipping credential embedding in sections - will be handled by format synthesizer")
             return sections
         
         # Find the best section to embed credentials (prefer technical/configuration sections)

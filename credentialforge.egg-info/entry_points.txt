@@ -1,0 +1,2 @@
+[console_scripts]
+credentialforge = credentialforge.cli:main

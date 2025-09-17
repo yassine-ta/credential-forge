@@ -1,7 +1,7 @@
-prefix=C:/Program Files (x86)/CredentialForge
-exec_prefix=C:/Program Files (x86)/CredentialForge
-libdir=C:/Program Files (x86)/CredentialForge/lib
-includedir=C:/Program Files (x86)/CredentialForge/include
+prefix=C:/Program Files/CredentialForge
+exec_prefix=C:/Program Files/CredentialForge
+libdir=C:/Program Files/CredentialForge/lib
+includedir=C:/Program Files/CredentialForge/include
 
 Name: llama
 Description: Port of Facebook's LLaMA model in C/C++

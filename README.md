@@ -50,6 +50,29 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
+### Corporate Network Setup
+
+If you're behind a corporate firewall or proxy, configure network settings:
+
+**Windows (Automated):**
+```cmd
+setup_corporate_network.bat
+```
+
+**Cross-platform:**
+```bash
+python setup_corporate_network.py
+```
+
+**Manual Configuration:**
+```cmd
+set CREDENTIALFORGE_SSL_VERIFY=false
+set CREDENTIALFORGE_TRUSTED_HOSTS=huggingface.co,pypi.org
+set HTTP_PROXY=http://your-proxy:port
+```
+
+See [Corporate Network Setup Guide](CORPORATE_NETWORK_SETUP.md) for detailed instructions.
+
 ### Setup Offline LLM (Optional)
 
 ```bash
@@ -366,6 +389,58 @@ flake8 credentialforge/
 # Type checking
 mypy credentialforge/
 ```
+
+## 🔧 Troubleshooting
+
+### Network Issues
+
+**SSL Certificate Errors:**
+```bash
+# Configure for corporate networks
+python -m credentialforge network --no-ssl-verify --trusted-hosts huggingface.co,pypi.org
+
+# Or set environment variables
+set CREDENTIALFORGE_SSL_VERIFY=false
+set CREDENTIALFORGE_TRUSTED_HOSTS=huggingface.co,pypi.org
+```
+
+**Proxy Configuration:**
+```bash
+# Configure proxy
+python -m credentialforge network --proxy http://proxy.company.com:8080
+
+# Test connectivity
+python -m credentialforge network --test
+```
+
+**Model Download Failures:**
+```bash
+# Test network configuration
+python test_ssl_config.py
+
+# Manual model download
+curl -k -L -o models/phi3-mini.gguf "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf/resolve/main/Phi-3-mini-4k-instruct-q4.gguf"
+```
+
+### Build Issues
+
+**llama-cpp-python Build Errors:**
+```bash
+# Install Visual Studio Build Tools (Windows)
+# Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+# Alternative: Use pre-compiled wheels
+pip install llama-cpp-python --only-binary=all
+```
+
+**CMake Not Found:**
+```bash
+# Install CMake
+pip install cmake
+# Or download from: https://cmake.org/download/
+```
+
+For more detailed troubleshooting, see [Corporate Network Setup Guide](CORPORATE_NETWORK_SETUP.md).
 
 ## ⚠️ Security and Ethics
 

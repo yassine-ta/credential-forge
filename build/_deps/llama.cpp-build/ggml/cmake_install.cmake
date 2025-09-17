@@ -1,8 +1,8 @@
-# Install script for directory: E:/credential_forge/build/_deps/llama.cpp-src/ggml
+# Install script for directory: C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CredentialForge")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/CredentialForge")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,54 +32,83 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set path to fallback-tool for dependency-resolution.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "E:/credential_forge/mingw64/bin/objdump.exe")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("E:/credential_forge/build/_deps/llama.cpp-build/ggml/src/cmake_install.cmake")
+  include("C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "E:/credential_forge/build/_deps/llama.cpp-build/ggml/src/ggml.a")
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/Debug/ggml.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/Release/ggml.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/MinSizeRel/ggml.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/RelWithDebInfo/ggml.lib")
+  endif()
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/Debug/ggml.dll")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/Release/ggml.dll")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/MinSizeRel/ggml.dll")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/RelWithDebInfo/ggml.dll")
+  endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-cpu.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-alloc.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-backend.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-blas.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-cann.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-cpp.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-cuda.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-opt.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-metal.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-rpc.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-sycl.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-vulkan.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/ggml-webgpu.h"
-    "E:/credential_forge/build/_deps/llama.cpp-src/ggml/include/gguf.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-cpu.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-alloc.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-backend.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-blas.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-cann.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-cpp.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-cuda.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-opt.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-metal.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-rpc.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-sycl.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-vulkan.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/ggml-webgpu.h"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-src/ggml/include/gguf.h"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "E:/credential_forge/build/_deps/llama.cpp-build/ggml/src/ggml-base.a")
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/Debug/ggml-base.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/Release/ggml-base.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/MinSizeRel/ggml-base.lib")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/src/RelWithDebInfo/ggml-base.lib")
+  endif()
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/Debug/ggml-base.dll")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/Release/ggml-base.dll")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/MinSizeRel/ggml-base.dll")
+  elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Z294FD/Downloads/credential-forge/build/bin/RelWithDebInfo/ggml-base.dll")
+  endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ggml" TYPE FILE FILES
-    "E:/credential_forge/build/_deps/llama.cpp-build/ggml/ggml-config.cmake"
-    "E:/credential_forge/build/_deps/llama.cpp-build/ggml/ggml-version.cmake"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/ggml-config.cmake"
+    "C:/Users/Z294FD/Downloads/credential-forge/build/_deps/llama.cpp-build/ggml/ggml-version.cmake"
     )
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "E:/credential_forge/build/_deps/llama.cpp-build/ggml/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()

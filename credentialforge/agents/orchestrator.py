@@ -123,13 +123,29 @@ class OrchestratorAgent:
             # Generate files
             results = self._generate_files()
             
+            # Ensure all file paths are strings, not dictionaries (PathLike fix)
+            sanitized_files = []
+            for file_item in results['files']:
+                if isinstance(file_item, dict):
+                    # Extract path from dictionary if it's still a dict
+                    if 'path' in file_item:
+                        sanitized_files.append(str(file_item['path']))
+                    elif 'file_path' in file_item:
+                        sanitized_files.append(str(file_item['file_path']))
+                    else:
+                        # Fallback: convert dict to string representation
+                        sanitized_files.append(str(file_item))
+                else:
+                    # Already a string/path
+                    sanitized_files.append(str(file_item))
+            
             # Calculate generation time
             generation_time = time.time() - start_time
             self.generation_stats['generation_time'] = generation_time
             
             # Prepare results
             return {
-                'files': results['files'],
+                'files': sanitized_files,
                 'errors': results['errors'],
                 'metadata': {
                     'total_files': len(results['files']),
@@ -626,6 +642,14 @@ class OrchestratorAgent:
             topic = random.choice(topics)
             credential_type = random.choice(credential_types)
             
+            # Handle language configuration - ensure single language string for task
+            language_config = self.config.get('language', 'en')
+            if isinstance(language_config, list):
+                # Select random language from list for this file
+                language = random.choice(language_config) if language_config else 'en'
+            else:
+                language = language_config or 'en'
+            
             tasks.append({
                 'file_format': file_format,
                 'topic': topic,
@@ -633,7 +657,7 @@ class OrchestratorAgent:
                 'file_index': batch_start + i,
                 'output_dir': str(output_dir),
                 'regex_db_path': self.config.get('regex_db_path', './data/regex_db.json'),
-                'language': self.config.get('language', 'en'),
+                'language': language,
                 'enable_parallel_llm': self.enable_parallel_llm,
                 'llm_model_path': self.llm.model_path if self.llm else None
             })
@@ -651,8 +675,20 @@ class OrchestratorAgent:
                     task = future_to_task[future]
                     try:
                         result = future.result(timeout=300)  # 5 minute timeout per file
+                        print(f"DEBUG: Worker result: success={result.get('success', 'unknown')}")
                         if result['success']:
-                            files.append(result['file'])
+                            # Extract just the file path, not the entire file dict
+                            file_info = result['file']
+                            print(f"DEBUG: Raw file_info: {type(file_info)} - {file_info}")
+                            if isinstance(file_info, dict) and 'path' in file_info:
+                                file_path = file_info['path']
+                                files.append(file_path)
+                                print(f"DEBUG: Extracted path from dict: {file_path}")
+                            else:
+                                file_path = str(file_info)
+                                files.append(file_path)
+                                print(f"DEBUG: Used file_info directly: {file_path}")
+                            print(f"DEBUG: Files list now has {len(files)} files")
                             # Update credential stats
                             if 'credentials_count' in result:
                                 self.generation_stats['total_credentials'] += result['credentials_count']
@@ -660,6 +696,7 @@ class OrchestratorAgent:
                                 self.generation_stats['credentials_by_type'][cred_type] = \
                                     self.generation_stats['credentials_by_type'].get(cred_type, 0) + result['credentials_count']
                         else:
+                            print(f"DEBUG: Worker failed: {result.get('error', 'unknown error')}")
                             errors.append(f"File {task['file_index']}: {result['error']}")
                         
                         completed_count += 1
@@ -674,6 +711,9 @@ class OrchestratorAgent:
                         
         except Exception as e:
             self.logger.error(f"Multiprocessing failed, falling back to sequential: {e}")
+            print(f"DEBUG: Exception in multiprocessing batch: {type(e).__name__}: {e}")
+            import traceback
+            print(f"DEBUG: Traceback: {traceback.format_exc()}")
             return self._generate_batch_sequential(batch_files, formats, topics, 
                                                  credential_types, regex_db, output_dir, batch_start)
         
@@ -691,6 +731,8 @@ class OrchestratorAgent:
             self.batch_times = self.batch_times[-50:]
         
         self.logger.info(f"Parallel batch completed: {len(files)} files in {batch_time:.2f}s")
+        print(f"DEBUG: Final files list length: {len(files)}")
+        print(f"DEBUG: Final files list content: {files}")
         
         return {'files': files, 'errors': errors}
     
@@ -826,6 +868,23 @@ class OrchestratorAgent:
             
             file_path = synthesizer.synthesize(content_data)
             
+            # Debug: Check what synthesizer returned
+            print(f"DEBUG: Synthesizer returned: {type(file_path)} - {file_path}")
+            
+            # Ensure file_path is a string, not a dict
+            if isinstance(file_path, dict):
+                # Extract path from dict if needed
+                if 'path' in file_path:
+                    file_path = file_path['path']
+                elif 'file_path' in file_path:
+                    file_path = file_path['file_path']
+                elif 'filepath' in file_path:
+                    file_path = file_path['filepath']
+                else:
+                    # Convert dict to string as fallback
+                    file_path = str(file_path)
+                print(f"DEBUG: Converted dict to path: {file_path}")
+            
             return {
                 'success': True, 
                 'file': {
@@ -857,11 +916,19 @@ class OrchestratorAgent:
                 credential_type = random.choice(credential_types)
                 self.logger.info(f"Selected: format={file_format}, topic={topic}, credential_type={credential_type}")
                 
+                # Handle language configuration - ensure single language string
+                language_config = self.config.get('language', 'en')
+                if isinstance(language_config, list):
+                    # Select random language from list for this file
+                    language = random.choice(language_config) if language_config else 'en'
+                else:
+                    language = language_config or 'en'
+                
                 # Generate credential with proper context
                 context = {
                     'company': 'TechCorp',
                     'topic': topic,
-                    'language': self.config.get('language', 'en')
+                    'language': language
                 }
                 
                 try:
@@ -898,6 +965,9 @@ class OrchestratorAgent:
                     # Single language or None (for random selection)
                     language = language_config or 'en'
                 
+                # Set flag to prevent double credential embedding since format synthesizer will handle it
+                self.content_generation_agent._skip_credential_embedding = True
+                
                 content_data = self.content_generation_agent.generate_content(
                     topic=topic,
                     credential_types=[credential_type],
@@ -923,12 +993,8 @@ class OrchestratorAgent:
                 
                 file_path = synthesizer.synthesize(content_data)
                 
-                files.append({
-                    'path': str(file_path),
-                    'format': file_format,
-                    'topic': topic,
-                    'credential_type': credential_type
-                })
+                # Append just the file path string, not a dictionary
+                files.append(str(file_path))
                 
             except Exception as e:
                 errors.append(f"File {batch_start + i}: {e}")
@@ -1039,6 +1105,9 @@ class OrchestratorAgent:
                 language = language_config or 'en'
             
             # Generate all content (topic-based content + credentials) using the new agent
+            # Set flag to prevent double credential embedding since format synthesizer will handle it
+            self.content_generation_agent._skip_credential_embedding = True
+            
             content_data = self.content_generation_agent.generate_content(
                 topic=topic,
                 credential_types=credential_types,
@@ -1069,13 +1138,21 @@ class OrchestratorAgent:
             embed_strategy = self.config.get('embed_strategy', 'random')
             
             # Create metadata
+            # Handle language configuration for metadata
+            language_config = self.config.get('language', 'en')
+            if isinstance(language_config, list):
+                # Use the first language for metadata, or 'mixed' to indicate multiple
+                metadata_language = language_config[0] if language_config else 'en'
+            else:
+                metadata_language = language_config or 'en'
+            
             metadata = {
                 'topic': topic,
                 'format': format_name,
                 'file_index': file_index,
                 'credential_types': actual_credential_types,  # Use actual types used
                 'embed_strategy': embed_strategy,
-                'language': self.config.get('language', 'en')
+                'language': metadata_language
             }
             
             # Generate file using the new format synthesizer

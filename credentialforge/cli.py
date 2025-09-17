@@ -57,6 +57,8 @@ def cli(ctx, log_level: str, config_file: Optional[str]):
               help='Path to regex database file')
 @click.option('--topics', required=True,
               help='Comma-separated topics for content generation')
+@click.option('--language', default='en',
+              help='Comma-separated languages (en,fr,es,de,it,ja,nl,pt,tr,zh)')
 @click.option('--embed-strategy', default='random',
               type=click.Choice(['random', 'metadata', 'body']),
               help='Embedding strategy')
@@ -70,7 +72,7 @@ def cli(ctx, log_level: str, config_file: Optional[str]):
               help='Logging level')
 @click.pass_context
 def generate(ctx, output_dir: str, num_files: int, formats: str,
-             credential_types: str, regex_db: str, topics: str,
+             credential_types: str, regex_db: str, topics: str, language: str,
              embed_strategy: str, batch_size: int, seed: Optional[int],
              llm_model: Optional[str], log_level: str):
     """Generate synthetic documents with embedded credentials."""
@@ -86,6 +88,7 @@ def generate(ctx, output_dir: str, num_files: int, formats: str,
         format_list = [f.strip() for f in formats.split(',')]
         credential_type_list = [t.strip() for t in credential_types.split(',')]
         topic_list = [t.strip() for t in topics.split(',')]
+        language_list = [l.strip() for l in language.split(',')]
         
         # Load regex database
         logger.info(f"Loading regex database from {regex_db}")
@@ -111,6 +114,7 @@ def generate(ctx, output_dir: str, num_files: int, formats: str,
             'formats': format_list,
             'credential_types': credential_type_list,
             'topics': topic_list,
+            'language': language_list,
             'embed_strategy': embed_strategy,
             'batch_size': batch_size,
             'seed': seed,
@@ -281,6 +285,68 @@ def version(ctx):
     """Show version information."""
     from . import __version__
     click.echo(f"CredentialForge version {__version__}")
+
+
+@cli.command()
+@click.option('--test', is_flag=True, help='Test network connectivity')
+@click.option('--configure', is_flag=True, help='Configure network settings interactively')
+@click.option('--ssl-verify/--no-ssl-verify', default=None, 
+              help='Enable/disable SSL verification')
+@click.option('--trusted-hosts', help='Comma-separated list of trusted hosts')
+@click.option('--proxy', help='HTTP/HTTPS proxy URL')
+@click.pass_context
+def network(ctx, test: bool, configure: bool, ssl_verify: Optional[bool], 
+           trusted_hosts: Optional[str], proxy: Optional[str]):
+    """Configure network settings for corporate environments."""
+    from .utils.network import configure_corporate_network, setup_corporate_ssl_env
+    import os
+    
+    logger = ctx.obj['logger']
+    
+    try:
+        if configure:
+            # Run interactive configuration
+            setup_corporate_ssl_env()
+            return
+        
+        # Apply command-line options
+        if ssl_verify is not None:
+            os.environ['CREDENTIALFORGE_SSL_VERIFY'] = 'true' if ssl_verify else 'false'
+            click.echo(f"✅ SSL verification {'enabled' if ssl_verify else 'disabled'}")
+        
+        if trusted_hosts:
+            os.environ['CREDENTIALFORGE_TRUSTED_HOSTS'] = trusted_hosts
+            click.echo(f"✅ Trusted hosts set to: {trusted_hosts}")
+        
+        if proxy:
+            os.environ['HTTP_PROXY'] = proxy
+            os.environ['HTTPS_PROXY'] = proxy
+            click.echo(f"✅ Proxy set to: {proxy}")
+        
+        if test:
+            # Test network connectivity
+            click.echo("🔍 Testing network connectivity...")
+            network_config = configure_corporate_network()
+            
+            test_urls = ["https://huggingface.co", "https://pypi.org"]
+            for url in test_urls:
+                result = network_config.test_connectivity(url)
+                if result['success']:
+                    click.echo(f"✅ {url} - OK ({result['response_time']}s)")
+                else:
+                    click.echo(f"❌ {url} - Failed: {result.get('error', 'Unknown error')}")
+        
+        # Show current settings
+        click.echo("\n📋 Current Network Settings:")
+        click.echo(f"  SSL Verify: {os.getenv('CREDENTIALFORGE_SSL_VERIFY', 'true')}")
+        click.echo(f"  Trusted Hosts: {os.getenv('CREDENTIALFORGE_TRUSTED_HOSTS', 'none')}")
+        click.echo(f"  HTTP Proxy: {os.getenv('HTTP_PROXY', 'none')}")
+        click.echo(f"  HTTPS Proxy: {os.getenv('HTTPS_PROXY', 'none')}")
+        
+    except Exception as e:
+        logger.error(f"Network configuration failed: {e}")
+        click.echo(f"❌ Error: {e}", err=True)
+        sys.exit(1)
 
 
 def main():

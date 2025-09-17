@@ -1,7 +1,7 @@
 set(LLAMA_VERSION      0.0.1)
-set(LLAMA_BUILD_COMMIT b8e09f08)
+set(LLAMA_BUILD_COMMIT 28c39da7)
 set(LLAMA_BUILD_NUMBER 1)
-set(LLAMA_SHARED_LIB   OFF)
+set(LLAMA_SHARED_LIB   ON)
 
 
 ####### Expanded from @PACKAGE_INIT@ by configure_package_config_file() #######

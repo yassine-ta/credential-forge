@@ -44,6 +44,18 @@ class ConfigManager:
                 'n_ctx': 2048,
                 'temperature': 0.7
             },
+            'network': {
+                'ssl_verify': True,
+                'timeout': 30,
+                'retries': 3,
+                'trusted_hosts': [],
+                'ca_bundle_path': None,
+                'proxy': {
+                    'http': None,
+                    'https': None,
+                    'no_proxy': None
+                }
+            },
             'formats': {
                 'eml': {
                     'max_size': '10MB',
@@ -173,13 +185,19 @@ class ConfigManager:
             'CREDENTIALFORGE_LLM_THREADS': 'llm.n_threads',
             'CREDENTIALFORGE_LLM_CTX': 'llm.n_ctx',
             'CREDENTIALFORGE_LLM_TEMPERATURE': 'llm.temperature',
+            'CREDENTIALFORGE_SSL_VERIFY': 'network.ssl_verify',
+            'CREDENTIALFORGE_NETWORK_TIMEOUT': 'network.timeout',
+            'CREDENTIALFORGE_CA_BUNDLE': 'network.ca_bundle_path',
+            'HTTP_PROXY': 'network.proxy.http',
+            'HTTPS_PROXY': 'network.proxy.https',
+            'NO_PROXY': 'network.proxy.no_proxy',
         }
         
         for env_var, config_key in env_mappings.items():
             value = os.getenv(env_var)
             if value is not None:
                 # Convert string values to appropriate types
-                if config_key in {'defaults.batch_size', 'llm.n_threads', 'llm.n_ctx'}:
+                if config_key in {'defaults.batch_size', 'llm.n_threads', 'llm.n_ctx', 'network.timeout'}:
                     try:
                         value = int(value)
                     except ValueError:
@@ -189,8 +207,16 @@ class ConfigManager:
                         value = float(value)
                     except ValueError:
                         continue
+                elif config_key == 'network.ssl_verify':
+                    value = value.lower() not in {'false', '0', 'no', 'off'}
                 
                 self.set(config_key, value)
+        
+        # Handle trusted hosts (comma-separated list)
+        trusted_hosts = os.getenv('CREDENTIALFORGE_TRUSTED_HOSTS')
+        if trusted_hosts:
+            hosts = [host.strip() for host in trusted_hosts.split(',')]
+            self.set('network.trusted_hosts', hosts)
     
     def _merge_config(self, new_config: Dict[str, Any]) -> None:
         """Merge new configuration with existing config.
@@ -225,6 +251,14 @@ class ConfigManager:
             Format configuration dictionary
         """
         return self.get(f'formats.{format_name}', {})
+    
+    def get_network_config(self) -> Dict[str, Any]:
+        """Get network configuration.
+        
+        Returns:
+            Network configuration dictionary
+        """
+        return self.get('network', {})
     
     def get_security_config(self) -> Dict[str, Any]:
         """Get security configuration.

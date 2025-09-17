@@ -19,6 +19,13 @@ except ImportError:
     NATIVE_AVAILABLE = False
     llama_cpp_interface = None
 
+# Import network utilities for SSL support
+try:
+    from ..utils.network import configure_corporate_network, download_model_with_ssl_support
+    NETWORK_UTILS_AVAILABLE = True
+except ImportError:
+    NETWORK_UTILS_AVAILABLE = False
+
 
 class LlamaInterface:
     """Interface for offline LLM inference using llama.cpp."""
@@ -744,33 +751,47 @@ Generate content that would be found in real-world {format_context} about {topic
         if model_file.exists():
             return str(model_file)
         
-        # Download model
+        # Download model with SSL support
         url = model_urls[model_name]
         print(f"Downloading {model_name} from {url}...")
         
         try:
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
-            
-            total_size = int(response.headers.get('content-length', 0))
-            downloaded = 0
-            
-            with open(model_file, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    if chunk:
-                        f.write(chunk)
-                        downloaded += len(chunk)
-                        if total_size > 0:
-                            percent = (downloaded / total_size) * 100
-                            print(f"\rDownloaded: {percent:.1f}%", end='', flush=True)
-            
-            print(f"\nModel downloaded to: {model_file}")
-            return str(model_file)
+            # Use network utilities if available for corporate SSL support
+            if NETWORK_UTILS_AVAILABLE:
+                return download_model_with_ssl_support(model_name, url, str(models_dir))
+            else:
+                # Fallback to basic requests (original implementation)
+                response = requests.get(url, stream=True)
+                response.raise_for_status()
+                
+                total_size = int(response.headers.get('content-length', 0))
+                downloaded = 0
+                
+                with open(model_file, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+                            downloaded += len(chunk)
+                            if total_size > 0:
+                                percent = (downloaded / total_size) * 100
+                                print(f"\rDownloaded: {percent:.1f}%", end='', flush=True)
+                
+                print(f"\nModel downloaded to: {model_file}")
+                return str(model_file)
             
         except Exception as e:
             if model_file.exists():
                 model_file.unlink()  # Remove partial download
-            raise LLMError(f"Failed to download model {model_name}: {e}")
+            
+            # Provide helpful error message for SSL issues
+            error_msg = f"Failed to download model {model_name}: {e}"
+            if "certificate verify failed" in str(e).lower() or "ssl" in str(e).lower():
+                error_msg += "\n\nFor corporate networks, try setting these environment variables:"
+                error_msg += "\n  set CREDENTIALFORGE_SSL_VERIFY=false"
+                error_msg += "\n  set CREDENTIALFORGE_TRUSTED_HOSTS=huggingface.co"
+                error_msg += "\n\nOr configure your corporate proxy settings."
+            
+            raise LLMError(error_msg)
     
     @classmethod
     def list_available_models(cls, models_dir: Optional[str] = None) -> List[str]:

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\81159b48afacb8fac8431402a6d9082a\llama.cpp-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\a31eb290a1e613560323de62f838028a\llama.cpp-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\6fd95fb102c137d6071af53f69a7d354\llama.cpp-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Z294FD\Downloads\credential-forge\build\_deps\llama.cpp-subbuild\CMakeFiles\llama.cpp-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{EA421146-4D3C-3B5A-8560-BB5B27845EAF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

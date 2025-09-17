@@ -1,0 +1,7 @@
+generation:
+  use_ai: false
+  use_templates: true
+llm:
+  enabled: false
+  fallback_mode: true
+  use_templates: true

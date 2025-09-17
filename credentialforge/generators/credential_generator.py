@@ -55,15 +55,16 @@ class CredentialGenerator:
             
             # Ensure uniqueness within session
             attempts = 0
-            max_attempts = 5
+            max_attempts = 10  # Increased attempts to avoid timestamp fallback
             while credential in self.generated_credentials and attempts < max_attempts:
                 credential = self._generate_fast(credential_type, pattern, context)
                 attempts += 1
             
             if attempts >= max_attempts:
-                # Add a timestamp to make it unique
+                # Instead of adding timestamp suffix that breaks regex, regenerate with different seed
                 import time
-                credential = f"{credential}_{int(time.time() * 1000) % 10000}"
+                random.seed(int(time.time() * 1000000))  # Use microsecond precision for better randomness
+                credential = self._generate_fast(credential_type, pattern, context)
             
             # Track generation
             self.generated_credentials.add(credential)
